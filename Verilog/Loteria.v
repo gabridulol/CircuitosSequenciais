@@ -165,49 +165,49 @@ always @(posedge clk) begin
     end
 
     // Primeiro número inserido
-    HEX0[6] <= ~n0 ~n1 ~n3 + ~n0 n2 + ~n0 n1 n3 + n0 ~n1 ~n2
-    HEX0[5] <= ~n0 ~n1 + ~n0 ~n2 ~n3 + ~n1 ~n2 + ~n0 n2 n3
-    HEX0[4] <= ~n1 ~n2 + ~n0 n3 + ~n0 n1
-    HEX0[3] <= ~n0 ~n1 ~n3 + ~n0 ~n1 n2 + ~n0 n2 ~n3 + ~n0 n1 ~n2 n3 + n0 ~n1 ~n2
-    HEX0[2] <= ~n1 ~n2 ~n3 + ~n0 n2 ~n3
-    HEX0[1] <= ~n0 ~n2 ~n3 + ~n0 n1 ~n2 + ~n0 n1 ~n3 + n0 ~n1 ~n2
-    HEX0[0] <= ~n0 ~n1 n2 + ~n0 n1 ~n2 + ~n0 n1 ~n3 + n0 ~n1 ~n2
+    HEX0[6] <= (~num0[0] & ~num0[1] & ~num0[3]) + (~num0[0] & num0[2]) + (~num0[0] & num0[1] & num0[3]) + (num0[0] & ~num0[1] & ~num0[2]);
+    HEX0[5] <= (~num0[0] & ~num0[1]) + (~num0[0] & ~num0[2] & ~num0[3]) + (~num0[1] & ~num0[2]) + (~num0[0] & num0[2] & num0[3]);
+    HEX0[4] <= (~num0[1] & ~num0[2]) + (~num0[0] & num0[3]) + (~num0[0] &  num0[1]);
+    HEX0[3] <= (~num0[0] & ~num0[1] & ~num0[3]) + (~num0[0] & ~num0[1] & num0[2]) + (~num0[0] & num0[2] &  ~num0[3]) + (~num0[0] &  num0[1] &  ~num0[2] & num0[3]) + (num0[0] &  ~num0[1] & ~num0[2]);
+    HEX0[2] <= (~num0[1] & ~num0[2] & ~num0[3]) + (~num0[0] & num0[2] & ~num0[3]);
+    HEX0[1] <= (~num0[0] & ~num0[2] & ~num0[3]) + (~num0[0] & num0[1] & ~num0[2]) + (~num0[0] & num0[1] & ~num0[3]) + (num0[0] & ~num0[1] & ~num0[2]);
+    HEX0[0] <= (~num0[0] & ~num0[1] & num0[2]) + (~num0[0] & num0[1] & ~num0[2]) + (~num0[0] & num0[1] & ~num0[3]) + (num0[0] & ~num0[1] & ~num0[2]);
 
     // Segundo número inserido
-    HEX1[6] <= 
-    HEX1[5] <= 
-    HEX1[4] <= 
-    HEX1[3] <= 
-    HEX1[2] <= 
-    HEX1[1] <= 
-    HEX1[0] <= 
+    HEX1[6] <= (~num1[0] & ~num1[1] & ~num1[3]) + (~num1[0] & num1[2]) + (~num1[0] & num1[1] & num1[3]) + (num1[0] & ~num1[1] & ~num1[2]);
+    HEX1[5] <= (~num1[0] & ~num1[1]) + (~num1[0] & ~num1[2] & ~num1[3]) + (~num1[1] & ~num1[2]) + (~num1[0] & num1[2] & num1[3]);
+    HEX1[4] <= (~num1[1] & ~num1[2]) + (~num1[0] & num1[3]) + (~num1[0] &  num1[1]);
+    HEX1[3] <= (~num1[0] & ~num1[1] & ~num1[3]) + (~num1[0] & ~num1[1] & num1[2]) + (~num1[0] & num1[2] &  ~num1[3]) + (~num1[0] &  num1[1] &  ~num1[2] & num1[3]) + (num1[0] &  ~num1[1] & ~num1[2]);
+    HEX1[2] <= (~num1[1] & ~num1[2] & ~num1[3]) + (~num1[0] & num1[2] & ~num1[3]);
+    HEX1[1] <= (~num1[0] & ~num1[2] & ~num1[3]) + (~num1[0] & num1[1] & ~num1[2]) + (~num1[0] & num1[1] & ~num1[3]) + (num1[0] & ~num1[1] & ~num1[2]);
+    HEX1[0] <= (~num1[0] & ~num1[1] & num1[2]) + (~num1[0] & num1[1] & ~num1[2]) + (~num1[0] & num1[1] & ~num1[3]) + (num1[0] & ~num1[1] & ~num1[2]);
 
     // Terceiro número inserido
-    HEX2[6] <= 
-    HEX2[5] <= 
-    HEX2[4] <= 
-    HEX2[3] <= 
-    HEX2[2] <= 
-    HEX2[1] <= 
-    HEX2[0] <= 
+    HEX2[6] <= (~num2[0] & ~num2[1] & ~num2[3]) + (~num2[0] & num2[2]) + (~num2[0] & num2[1] & num2[3]) + (num2[0] & ~num2[1] & ~num2[2]);
+    HEX2[5] <= (~num2[0] & ~num2[1]) + (~num2[0] & ~num2[2] & ~num2[3]) + (~num2[1] & ~num2[2]) + (~num2[0] & num2[2] & num2[3]);
+    HEX2[4] <= (~num2[1] & ~num2[2]) + (~num2[0] & num2[3]) + (~num2[0] &  num2[1]);
+    HEX2[3] <= (~num2[0] & ~num2[1] & ~num2[3]) + (~num2[0] & ~num2[1] & num2[2]) + (~num2[0] & num2[2] &  ~num2[3]) + (~num2[0] &  num2[1] &  ~num2[2] & num2[3]) + (num2[0] &  ~num2[1] & ~num2[2]);
+    HEX2[2] <= (~num2[1] & ~num2[2] & ~num2[3]) + (~num2[0] & num2[2] & ~num2[3]);
+    HEX2[1] <= (~num2[0] & ~num2[2] & ~num2[3]) + (~num2[0] & num2[1] & ~num2[2]) + (~num2[0] & num2[1] & ~num2[3]) + (num2[0] & ~num2[1] & ~num2[2]);
+    HEX2[0] <= (~num2[0] & ~num2[1] & num2[2]) + (~num2[0] & num2[1] & ~num2[2]) + (~num2[0] & num2[1] & ~num2[3]) + (num2[0] & ~num2[1] & ~num2[2]);
 
     // Quarto número inserido
-    HEX3[6] <= 
-    HEX3[5] <= 
-    HEX3[4] <= 
-    HEX3[3] <= 
-    HEX3[2] <= 
-    HEX3[1] <= 
-    HEX3[0] <= 
+    HEX3[6] <= (~num3[0] & ~num3[1] & ~num3[3]) + (~num3[0] & num3[2]) + (~num3[0] & num3[1] & num3[3]) + (num3[0] & ~num3[1] & ~num3[2]);
+    HEX3[5] <= (~num3[0] & ~num3[1]) + (~num3[0] & ~num3[2] & ~num3[3]) + (~num3[1] & ~num3[2]) + (~num3[0] & num3[2] & num3[3]);
+    HEX3[4] <= (~num3[1] & ~num3[2]) + (~num3[0] & num3[3]) + (~num3[0] &  num3[1]);
+    HEX3[3] <= (~num3[0] & ~num3[1] & ~num3[3]) + (~num3[0] & ~num3[1] & num3[2]) + (~num3[0] & num3[2] &  ~num3[3]) + (~num3[0] &  num3[1] &  ~num3[2] & num3[3]) + (num3[0] &  ~num3[1] & ~num3[2]);
+    HEX3[2] <= (~num3[1] & ~num3[2] & ~num3[3]) + (~num3[0] & num3[2] & ~num3[3]);
+    HEX3[1] <= (~num3[0] & ~num3[2] & ~num3[3]) + (~num3[0] & num3[1] & ~num3[2]) + (~num3[0] & num3[1] & ~num3[3]) + (num3[0] & ~num3[1] & ~num3[2]);
+    HEX3[0] <= (~num3[0] & ~num3[1] & num3[2]) + (~num3[0] & num3[1] & ~num3[2]) + (~num3[0] & num3[1] & ~num3[3]) + (num3[0] & ~num3[1] & ~num3[2]);
 
     // Quinto número inserido
-    HEX4[6] <= 
-    HEX4[5] <= 
-    HEX4[4] <= 
-    HEX4[3] <= 
-    HEX4[2] <= 
-    HEX4[1] <= 
-    HEX4[0] <= 
+    HEX4[6] <= (~num4[0] & ~num4[1] & ~num4[3]) + (~num4[0] & num4[2]) + (~num4[0] & num4[1] & num4[3]) + (num4[0] & ~num4[1] & ~num4[2]);
+    HEX4[5] <= (~num4[0] & ~num4[1]) + (~num4[0] & ~num4[2] & ~num4[3]) + (~num4[1] & ~num4[2]) + (~num4[0] & num4[2] & num4[3]);
+    HEX4[4] <= (~num4[1] & ~num4[2]) + (~num4[0] & num4[3]) + (~num4[0] &  num4[1]);
+    HEX4[3] <= (~num4[0] & ~num4[1] & ~num4[3]) + (~num4[0] & ~num4[1] & num4[2]) + (~num4[0] & num4[2] &  ~num4[3]) + (~num4[0] &  num4[1] &  ~num4[2] & num4[3]) + (num4[0] &  ~num4[1] & ~num4[2]);
+    HEX4[2] <= (~num4[1] & ~num4[2] & ~num4[3]) + (~num4[0] & num4[2] & ~num4[3]);
+    HEX4[1] <= (~num4[0] & ~num4[2] & ~num4[3]) + (~num4[0] & num4[1] & ~num4[2]) + (~num4[0] & num4[1] & ~num4[3]) + (num4[0] & ~num4[1] & ~num4[2]);
+    HEX4[0] <= (~num4[0] & ~num4[1] & num4[2]) + (~num4[0] & num4[1] & ~num4[2]) + (~num4[0] & num4[1] & ~num4[3]) + (num4[0] & ~num4[1] & ~num4[2]);
 
     // Prêmio
     HEX5[6] <= ~n2

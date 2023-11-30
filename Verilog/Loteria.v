@@ -33,8 +33,6 @@ parameter b2 = 4'b1001;
 parameter b3 = 4'b0110;
 parameter b4 = 4'b0111;
 
-5
-
 // Estados da FSM
 reg [2:0] state;
 parameter s0 = 4'b0000; // Aguardando inserção do primeiro número

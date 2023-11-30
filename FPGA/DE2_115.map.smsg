@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at Verilog1.v(76): always construct contains both blocking and non-blocking assignments File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 76

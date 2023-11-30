@@ -108,10 +108,10 @@ FL_ADDR[12]                  : AA10      : output : 3.3-V LVTTL       :         
 VCCIO3                       : AA11      : power  :                   : 3.3V    : 3         :                
 FL_ADDR[6]                   : AA12      : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_ADDR[5]                   : AA13      : output : 3.3-V LVTTL       :         : 3         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA14      :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA15      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA16      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA17      :        :                   :         : 4         :                
+HEX7[6]                      : AA14      : output : 3.3-V LVTTL       :         : 3         : Y              
+HEX6[5]                      : AA15      : output : 3.3-V LVTTL       :         : 4         : Y              
+HEX6[2]                      : AA16      : output : 3.3-V LVTTL       :         : 4         : Y              
+HEX6[0]                      : AA17      : output : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : AA18      : power  :                   : 3.3V    : 4         :                
 HEX4[1]                      : AA19      : output : 3.3-V LVTTL       :         : 4         : Y              
 GNDA4                        : AA20      : gnd    :                   :         :           :                
@@ -137,9 +137,9 @@ SRAM_ADDR[15]                : AB11      : output : 3.3-V LVTTL       :         
 FL_ADDR[8]                   : AB12      : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_ADDR[7]                   : AB13      : output : 3.3-V LVTTL       :         : 3         : Y              
 SD_DAT[2]                    : AB14      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB15      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB16      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB17      :        :                   :         : 4         :                
+HEX6[4]                      : AB15      : output : 3.3-V LVTTL       :         : 4         : Y              
+HEX6[1]                      : AB16      : output : 3.3-V LVTTL       :         : 4         : Y              
+HEX6[3]                      : AB17      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX5[2]                      : AB18      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX4[0]                      : AB19      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX3[2]                      : AB20      : output : 3.3-V LVTTL       :         : 4         : Y              
@@ -167,7 +167,7 @@ GND                          : AC13      : gnd    :                   :         
 SD_DAT[3]                    : AC14      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 GPIO[1]                      : AC15      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : AC16      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC17      :        :                   :         : 4         :                
+HEX6[6]                      : AC17      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX5[1]                      : AC18      : output : 3.3-V LVTTL       :         : 4         : Y              
 GPIO[10]                     : AC19      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : AC20      : gnd    :                   :         :           :                
@@ -195,7 +195,7 @@ VCCIO3                       : AD13      : power  :                   : 3.3V    
 SD_CMD                       : AD14      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 GPIO[8]                      : AD15      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : AD16      : power  :                   : 3.3V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD17      :        :                   :         : 4         :                
+HEX7[0]                      : AD17      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX5[0]                      : AD18      : output : 3.3-V LVTTL       :         : 4         : Y              
 GPIO[12]                     : AD19      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : AD20      : power  :                   : 3.3V    : 4         :                
@@ -223,7 +223,7 @@ SD_CLK                       : AE13      : output : 3.3-V LVTTL       :         
 SD_DAT[0]                    : AE14      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 GPIO[9]                      : AE15      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GPIO[7]                      : AE16      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE17      :        :                   :         : 4         :                
+HEX7[1]                      : AE17      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX4[6]                      : AE18      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX4[4]                      : AE19      : output : 3.3-V LVTTL       :         : 4         : Y              
 GPIO[30]                     : AE20      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
@@ -251,7 +251,7 @@ SD_DAT[1]                    : AF13      : bidir  : 3.3-V LVTTL       :         
 SD_WP_N                      : AF14      : input  : 3.3-V LVTTL       :         : 3         : Y              
 GPIO[13]                     : AF15      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GPIO[11]                     : AF16      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF17      :        :                   :         : 4         :                
+HEX7[4]                      : AF17      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX5[5]                      : AF18      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX4[5]                      : AF19      : output : 3.3-V LVTTL       :         : 4         : Y              
 GPIO[32]                     : AF20      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
@@ -279,8 +279,8 @@ GND                          : AG13      : gnd    :                   :         
 CLOCK2_50                    : AG14      : input  : 3.3-V LVTTL       :         : 3         : Y              
 CLOCK3_50                    : AG15      : input  : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : AG16      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG17      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG18      :        :                   :         : 4         :                
+HEX7[2]                      : AG17      : output : 3.3-V LVTTL       :         : 4         : Y              
+HEX7[5]                      : AG18      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX5[4]                      : AG19      : output : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : AG20      : gnd    :                   :         :           :                
 HEX4[2]                      : AG21      : output : 3.3-V LVTTL       :         : 4         : Y              
@@ -306,7 +306,7 @@ VCCIO3                       : AH13      : power  :                   : 3.3V    
 SMA_CLKIN                    : AH14      : input  : 3.3-V LVTTL       :         : 3         : Y              
 HSMC_CLKIN0                  : AH15      : input  : 2.5 V             :         : 4         : Y              
 VCCIO4                       : AH16      : power  :                   : 3.3V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH17      :        :                   :         : 4         :                
+HEX7[3]                      : AH17      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX5[6]                      : AH18      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX5[3]                      : AH19      : output : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : AH20      : power  :                   : 3.3V    : 4         :                

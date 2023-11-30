@@ -34,8 +34,8 @@ module DE2_115(
 	HEX3,
 	HEX4,
 	HEX5,
-	// HEX6,
-	// HEX7,
+	HEX6,
+	HEX7,
 
 	//////////// LCD //////////
 	LCD_BLON,
@@ -239,8 +239,8 @@ output		     [6:0]		HEX2;
 output		     [6:0]		HEX3;
 output		     [6:0]		HEX4;
 output		     [6:0]		HEX5;
-// output		     [6:0]		HEX6;
-// output		     [6:0]		HEX7;
+output		     [6:0]		HEX6;
+output		     [6:0]		HEX7;
 
 //////////// LCD //////////
 output		          		LCD_BLON;
@@ -411,7 +411,7 @@ inout 		    [16:0]		HSMC_TX_D_P;
 //=======================================================
 
 Jogo Jogo (
-	.clk(SW[17]),
+	.clk(KEY[0]),
 	
 	.num(SW[3:0]),
 	
@@ -432,6 +432,10 @@ Jogo Jogo (
 	.HEX4(HEX4[6:0]),
 	
 	.HEX5(HEX5[6:0]),
+	
+	.HEX6(HEX6[6:0]),
+	
+	.HEX7(HEX7[6:0]),
 	
 	.LEDG8(LEDG[8])
 );

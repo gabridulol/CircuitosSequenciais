@@ -17,21 +17,21 @@ module Jogo (
 );
 
 // Números da loteria - 50967
-parameter [3:0] b0 = 4'b0101; // 5
-parameter [3:0] b1 = 4'b0000; // 0
-parameter [3:0] b2 = 4'b1001; // 9
-parameter [3:0] b3 = 4'b0110; // 6 
-parameter [3:0] b4 = 4'b0111; // 7
+parameter [3:0] b0 = 4'b0101, // 5
+          [3:0] b1 = 4'b0000, // 0
+          [3:0] b2 = 4'b1001, // 9
+          [3:0] b3 = 4'b0110, // 6 
+          [3:0] b4 = 4'b0111; // 7
 
 // Estados da FSM
 reg [2:0] state;
-parameter [2:0] s0 = 3'b000; // Aguardando inserção do primeiro número
-parameter [2:0] s1 = 3'b001; // Aguardando inserção do segundo número
-parameter [2:0] s2 = 3'b010; // Aguardando inserção do terceiro número
-parameter [2:0] s3 = 3'b011; // Aguardando inserção do quarto número
-parameter [2:0] s4 = 3'b100; // Aguardando inserção do quinto número
-parameter [2:0] s5 = 3'b101; // Aguardando finalização do jogo
-parameter [2:0] s6 = 3'b110; // Verificando resultado do jogo
+parameter [2:0] s0 = 3'b000, // Aguardando inserção do primeiro número
+          [2:0] s1 = 3'b001, // Aguardando inserção do segundo número
+          [2:0] s2 = 3'b010, // Aguardando inserção do terceiro número
+          [2:0] s3 = 3'b011, // Aguardando inserção do quarto número
+          [2:0] s4 = 3'b100, // Aguardando inserção do quinto número
+          [2:0] s5 = 3'b101, // Aguardando finalização do jogo
+          [2:0] s6 = 3'b110; // Verificando resultado do jogo
 
 // Contador de acertos
 reg [2:0] acertos;

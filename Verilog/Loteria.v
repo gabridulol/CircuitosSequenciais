@@ -1,9 +1,7 @@
 module Jogo (
     // Entradas
     input clk, // Clock
-
-    input [3:0] num // Número inserido
-
+    input [3:0] num, // Número inserido
     input insert, // Inserir número
     input finish, // Finalizar jogo
     input reset, // Reset
@@ -19,12 +17,12 @@ module Jogo (
     output [1:0] p0, // Prêmio
 
     // FPGA
-    output HEX0 [6:0] // Número 5
-    output HEX1 [6:0] // Número 4
-    output HEX2 [6:0] // Número 3
-    output HEX3 [6:0] // Número 2
-    output HEX4 [6:0] // Número 1
-    output HEX5 [6:0] // Prêmio
+    output HEX0 [6:0], // Número 5
+    output HEX1 [6:0], // Número 4
+    output HEX2 [6:0], // Número 3
+    output HEX3 [6:0], // Número 2
+    output HEX4 [6:0], // Número 1
+    output HEX5 [6:0], // Prêmio
     output LED8 // Venceu?
 );
 
@@ -127,16 +125,38 @@ always @(posedge clk) begin
             end
             s6 : begin
                 // Verificando resultado do jogo
+                if ((num0 == b0 && num1 == b1 && num2 == b2 && num3 == b3) || (num0 == b0 && num1 == b1 && num2 == b2 && num4 == b4) || (num0 == b0 && num1 == b1 && num3 == b3 && num4 == b4) || (num0 == b0 && num2 == b2 && num3 == b3 && num4 == b4) || (num1 == b1 && num2 == b2 && num3 == b3 && num4 == b4)) begin
+                    state <= s8; // Prêmio 1
+                end
+                else if ((num0 == b0 && num1 == b1 && num4 == b4) || (num0 == b0 && num2 == b2 && num4 == b4) || (num0 == b0 && num3 == b3 && num4 == b4) || (num1 == b1 && num2 == b2 && num4 == b4) || (num1 == b1 && num3 == b3 && num4 == b4) || (num2 == b2 && num3 == b3 && num4 == b4)) begin
+                    state <= s9; // Prêmio 2
+                end
+                else begin
+                    state <= s7; // Prêmio 0
+                end
             end
             s7 : begin
                 // Prêmio 0
+                win <= 0;
+                p0 <= 4'b00;
+                LED8 <= 0;
+                state <= s0;
             end
             s8 : begin
                 // Prêmio 1
+                win <= 1;
+                p0 <= 4'b01;
+                LED8 <= 1;
+                state <= s0;
             end
             s9 : begin
                 // Prêmio 2
+                win <= 1;
+                p0 <= 4'b10;
+                LED8 <= 1;
+                state <= s0;
             end
         endcase
     end
 end
+endmodule

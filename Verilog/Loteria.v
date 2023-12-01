@@ -35,8 +35,8 @@ parameter [3:0] s4 = 4'b0100; // Aguardando inserção do quinto número
 parameter [3:0] s5 = 4'b0101; // Aguardando finalização do jogo
 parameter [3:0] s6 = 4'b0110; // Verificando resultado do jogo
 parameter [3:0] s7 = 4'b0111; // Estado Prêmio 0
-parameter [3:0] s8 = 4'b1000; // Estado Prêmio 2
-parameter [3:0] s9 = 4'b1001; // Estado Prêmio 1
+parameter [3:0] s8 = 4'b1000; // Estado Prêmio 1
+parameter [3:0] s9 = 4'b1001; // Estado Prêmio 2
  
 // Variáveis
 reg [3:0] state; // Estado da FSM
@@ -88,6 +88,7 @@ always @(posedge clk) begin
         num3 = 4'b0000;
         num4 = 4'b0000;
         hits = 3'b000;
+        lastTrue = 1'b0;
         win = 1'b0;
         p0 = 2'b00;
     end
@@ -160,20 +161,32 @@ always @(posedge clk) begin
             end
             s6 : begin
                 // Verificando resultado do jogo
-                if (hits >= 3'b100 || (hits = 3'b011 && lastTrue == 1'b1)) begin
-                    win = 1;
-                    p0 = 2'b01; // Prêmio 1
+                if (hits == 3'b100 || (hits == 3'b011 && lastTrue == 1'b1)) begin
+                    state = s8; // Prêmio 1
                 end
                 else if (hits == 3'b010 && lastTrue == 1'b1) begin
-                    win = 1;
-                    p0 = 2'b10; // Prêmio 2
+                    state = s9 // Prêmio 2
                 end
                 else begin
-                    win = 0;
-                    p0 = 2'b00; // Sem prêmio
+                    state = s7; // Sem prêmio
                 end
                 state = s0;
                 hits = 3'b000;
+            end
+            s7 : begin
+                // Prêmio 0
+                win = 0;
+                p0 = 2'b00;
+            end
+            s8 : begin
+                // Prêmio 1
+                win = 1;
+                p0 = 2'b01;
+            end
+            s9 : begin
+                // Prêmio 2
+                win = 1;
+                p0 = 2'b10;
             end
         endcase
     end

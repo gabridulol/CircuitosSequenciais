@@ -23,7 +23,7 @@ module Loteria (
 parameter [3:0] b0 = 4'b0101; // 5
 parameter [3:0] b1 = 4'b0000; // 0
 parameter [3:0] b2 = 4'b1001; // 9
-parameter [3:0] b3 = 4'b0110; // 6 
+parameter [3:0] b3 = 4'b0110; // 6
 parameter [3:0] b4 = 4'b0111; // 7
 
 // Estados da FSM
@@ -39,14 +39,17 @@ parameter [3:0] s8 = 4'b1000; // Estado Prêmio 2
  
 // Variáveis
 reg [3:0] state; // Estado da FSM
+
 reg [3:0] num0; // Número 0
 reg [3:0] num1; // Número 1
 reg [3:0] num2; // Número 2
 reg [3:0] num3; // Número 3
 reg [3:0] num4; // Número 4
+
 reg [2:0] hits; // Acertos
 reg [2:0] auxHits; // Auxiliar de acertos
 reg lastTrue; // Último número inserido
+
 reg win; // Venceu?
 reg [1:0] p0; // Prêmio
 
@@ -55,16 +58,17 @@ reg [8:0] lrm [0:8]; // Mapa de LEDR
 
 initial begin
     state = s0;
-    win = 0;
     num0 = 4'b0000;
     num1 = 4'b0000;
     num2 = 4'b0000;
     num3 = 4'b0000;
     num4 = 4'b0000;
+
     hits = 3'b000;
     auxHits = 3'b000;
-    lastTrue = 1'b0;
-    win = 1'b0;
+    lastTrue = 0;
+
+    win = 0;
     p0 = 2'b00;
 
     sdm[0] = 7'b1000000; // 0
@@ -100,9 +104,11 @@ always @(posedge clk) begin
         num2 = 4'b0000;
         num3 = 4'b0000;
         num4 = 4'b0000;
-        hits = 3'b000;
 
-        lastTrue = 1'b0;
+        hits = 3'b000;
+        auxHits = 3'b000;
+        lastTrue = 0;
+
         win = 1'b0;
         p0 = 2'b00;
     end
@@ -131,7 +137,7 @@ always @(posedge clk) begin
                         else begin
                             hits = 0;
                         end
-                        if(hits > 3'b000) begin
+                        if (hits > auxHits) begin
                             auxHits = hits;
                         end
                         state = s2;
@@ -149,7 +155,7 @@ always @(posedge clk) begin
                         else begin
                             hits = 0;
                         end
-                        if(hits > 3'b000) begin
+                        if (hits > auxHits) begin
                             auxHits = hits;
                         end
                         state = s3;
@@ -167,7 +173,7 @@ always @(posedge clk) begin
                         else begin
                             hits = 0;
                         end
-                        if(hits > 3'b000) begin
+                        if (hits > auxHits) begin
                             auxHits = hits;
                         end
                         state = s4;
@@ -177,12 +183,12 @@ always @(posedge clk) begin
             s4 : begin
                 // Aguardando inserção do quinto número
                 if (insert) begin
-                    if(num <= 4'b1001) begin
+                    if (num <= 4'b1001) begin
                         num4 = num;
                         if (num == b4) begin
                             lastTrue = 1'b1;
-                            end
-                            state = s5;
+                        end
+                        state = s5;
                     end
                 end
             end

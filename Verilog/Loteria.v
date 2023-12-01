@@ -56,6 +56,7 @@ reg [1:0] p0; // Prêmio
 reg [6:0] sdm [0:11]; // Mapa de Segmentos do Display
 reg [8:0] lrm [0:8]; // Mapa de LEDR
 
+// Incializando
 initial begin
     state = s0;
     num0 = 4'b0000;
@@ -95,6 +96,7 @@ initial begin
     lrm[8] = 8'b11111111; // S8
 end
 
+// Implementação da FSM
 always @(posedge clk) begin
     if (reset) begin
         state = s0;
@@ -227,16 +229,17 @@ always @(posedge clk) begin
     end
 end
 
+// Atualizando
 always @(state, num0, num1, num2, num3, num4, p0) begin
-    LEDR = lrm[state];
-    HEX0 = sdm[num4];
-    HEX1 = sdm[num3];
-    HEX2 = sdm[num2];
-    HEX3 = sdm[num1];
-    HEX4 = sdm[num0];
-    HEX5 = sdm[10];
-    HEX6 = sdm[p0];
-    HEX7 = sdm[11];
-    LEDG = win;
+    LEDR = lrm[state]; // Estado
+    HEX0 = sdm[num4]; // Número 4
+    HEX1 = sdm[num3]; // Número 3
+    HEX2 = sdm[num2]; // Número 2
+    HEX3 = sdm[num1]; // Número 1
+    HEX4 = sdm[num0]; // Número 0
+    HEX5 = sdm[10]; // -
+    HEX6 = sdm[p0]; // Prêmio
+    HEX7 = sdm[11]; // P
+    LEDG = win; // Venceu?
 end
 endmodule

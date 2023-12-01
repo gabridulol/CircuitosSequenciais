@@ -43,6 +43,7 @@ reg [3:0] num2; // Número 2
 reg [3:0] num3; // Número 3
 reg [3:0] num4; // Número 4
 reg [2:0] hits; // Acertos
+reg [1:0] lastTrue; // Último número inserido
 reg win; // Venceu?
 reg [1:0] p0; // Prêmio
 
@@ -57,6 +58,7 @@ initial begin
     num3 = 4'b0000;
     num4 = 4'b0000;
     hits = 3'b000;
+    lastTrue = 1'b0;
     win = 1'b0;
     p0 = 2'b00;
     sdm[0] = 7'b1000000; // 0
@@ -102,8 +104,11 @@ always @(posedge clk) begin
                 // Aguardando inserção do segundo número
                 if (insert) begin
                     num1 = num;
-                    if (num == b1) begin
+                    if (num == b1 && num0 == b0) begin
                         hits = hits + 1;
+                    end
+                    else begin
+                        hits = 0;
                     end
                     state = s2;
                 end
@@ -112,8 +117,11 @@ always @(posedge clk) begin
                 // Aguardando inserção do terceiro número
                 if (insert) begin
                     num2 = num;
-                    if (num == b2) begin
+                    if (num == b2 && num1 == b1) begin
                         hits = hits + 1;
+                    end
+                    else begin
+                        hits = 0;
                     end
                     state = s3;
                 end
@@ -122,8 +130,11 @@ always @(posedge clk) begin
                 // Aguardando inserção do quarto número
                 if (insert) begin
                     num3 = num;
-                    if (num == b3) begin
+                    if (num == b3 && num2 == b2) begin
                         hits = hits + 1;
+                    end
+                    else begin
+                        hits = 0;
                     end
                     state = s4;
                 end
@@ -133,7 +144,7 @@ always @(posedge clk) begin
                 if (insert) begin
                     num4 = num;
                     if (num == b4) begin
-                        hits = hits + 1;
+                      lastTrue = 1'b1;
                     end
                     state = s5;
                 end
@@ -146,11 +157,11 @@ always @(posedge clk) begin
             end
             s6 : begin
                 // Verificando resultado do jogo
-                if (hits >= 3'b100 || (hits >= 3'b011 && num == b4)) begin
+                if (hits >= 3'b100 || (hits = 3'b011 && lastTrue == 1'b1)) begin
                     win = 1;
                     p0 = 2'b01; // Prêmio 1
                 end
-                else if (hits >= 3'b010 && num == b4) begin
+                else if (hits == 3'b010 && lastTrue == 1'b1) begin
                     win = 1;
                     p0 = 2'b10; // Prêmio 2
                 end

@@ -1,4 +1,4 @@
-module Jogo (
+module Loteria (
     // Entradas
     input wire clk, // Clock
     input wire [3:0] num, // Número
@@ -7,6 +7,7 @@ module Jogo (
     input wire reset, // Reset
 
     // Saídas
+    output reg [3:0] LEDR, // LEDR -> Estado
     output reg [6:0] HEX0, // Display 0 -> Número 4
     output reg [6:0] HEX1, // Display 1 -> Número 3
     output reg [6:0] HEX2, // Display 2 -> Número 2
@@ -26,17 +27,19 @@ parameter [3:0] b3 = 4'b0110; // 6
 parameter [3:0] b4 = 4'b0111; // 7
 
 // Estados da FSM
-parameter [2:0] s0 = 3'b000; // Aguardando inserção do primeiro número
-parameter [2:0] s1 = 3'b001; // Aguardando inserção do segundo número
-parameter [2:0] s2 = 3'b010; // Aguardando inserção do terceiro número
-parameter [2:0] s3 = 3'b011; // Aguardando inserção do quarto número
-parameter [2:0] s4 = 3'b100; // Aguardando inserção do quinto número
-parameter [2:0] s5 = 3'b101; // Aguardando finalização do jogo
-parameter [2:0] s6 = 3'b110; // Verificando resultado do jogo
-
-
+parameter [3:0] s0 = 4'b0000; // Aguardando inserção do primeiro número
+parameter [3:0] s1 = 4'b0001; // Aguardando inserção do segundo número
+parameter [3:0] s2 = 4'b0010; // Aguardando inserção do terceiro número
+parameter [3:0] s3 = 4'b0011; // Aguardando inserção do quarto número
+parameter [3:0] s4 = 4'b0100; // Aguardando inserção do quinto número
+parameter [3:0] s5 = 4'b0101; // Aguardando finalização do jogo
+parameter [3:0] s6 = 4'b0110; // Verificando resultado do jogo
+parameter [3:0] s7 = 4'b0111; // Estado Prêmio 0
+parameter [3:0] s8 = 4'b1000; // Estado Prêmio 2
+parameter [3:0] s9 = 4'b1001; // Estado Prêmio 1
+ 
 // Variáveis
-reg [2:0] state; // Estado da FSM
+reg [3:0] state; // Estado da FSM
 reg [3:0] num0; // Número 0
 reg [3:0] num1; // Número 1
 reg [3:0] num2; // Número 2
@@ -177,6 +180,7 @@ always @(posedge clk) begin
 end
 
 always @(num0, num1, num2, num3, num4, p0) begin
+    LEDR = state;
     HEX0 = sdm[num4];
     HEX1 = sdm[num3];
     HEX2 = sdm[num2];

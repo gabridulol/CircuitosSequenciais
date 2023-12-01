@@ -48,7 +48,7 @@ reg [3:0] num4; // Número 4
 
 reg [2:0] hits; // Acertos
 reg [2:0] auxHits; // Auxiliar de acertos
-reg lastTrue; // Último número inserido
+reg lastTrue; // Último número inserido. Acertou?
 
 reg win; // Venceu?
 reg [1:0] p0; // Prêmio
@@ -56,8 +56,10 @@ reg [1:0] p0; // Prêmio
 reg [6:0] sdm [0:11]; // Mapa de Segmentos do Display
 reg [8:0] lrm [0:8]; // Mapa de LEDR
 
+// Incializando
 initial begin
     state = s0;
+	 
     num0 = 4'b0000;
     num1 = 4'b0000;
     num2 = 4'b0000;
@@ -95,10 +97,10 @@ initial begin
     lrm[8] = 8'b11111111; // S8
 end
 
+// Implementação da FSM
 always @(posedge clk) begin
     if (reset) begin
         state = s0;
-        win = 0;
         num0 = 4'b0000;
         num1 = 4'b0000;
         num2 = 4'b0000;
@@ -109,7 +111,7 @@ always @(posedge clk) begin
         auxHits = 3'b000;
         lastTrue = 0;
 
-        win = 1'b0;
+        win = 0;
         p0 = 2'b00;
     end
     else begin
@@ -163,8 +165,8 @@ always @(posedge clk) begin
                 end
             end
             s3 : begin
-            // Aguardando inserção do quarto número
-            if (insert) begin
+                // Aguardando inserção do quarto número
+                if (insert) begin
                     if(num <= 4'b1001) begin        
                         num3 = num;
                         if (num == b3) begin
@@ -193,14 +195,17 @@ always @(posedge clk) begin
                 end
             end
             s5 : begin
+                // Finalizando e verificando resultado do jogo
                 if (finish) begin
-                    // Verificando resultado do jogo
+                    // Verificando para prêmio 1
                     if (auxHits == 3'b100 || (auxHits == 3'b011 && lastTrue == 1'b1)) begin
                         state = s7; // Prêmio 1
                     end
+                    // Verificando para prêmio 2
                     else if (auxHits == 3'b010 && lastTrue == 1'b1) begin
                         state = s8; // Prêmio 2
                     end
+                    // Verificando para prêmio 0
                     else begin
                         state = s6; // Prêmio 0
                     end
@@ -225,16 +230,17 @@ always @(posedge clk) begin
     end
 end
 
+// Atualizando
 always @(state, num0, num1, num2, num3, num4, p0) begin
-    LEDR = lrm[state];
-    HEX0 = sdm[num4];
-    HEX1 = sdm[num3];
-    HEX2 = sdm[num2];
-    HEX3 = sdm[num1];
-    HEX4 = sdm[num0];
-    HEX5 = sdm[10];
-    HEX6 = sdm[p0];
-    HEX7 = sdm[11];
-    LEDG = win;
+    LEDR = lrm[state]; // Estado
+    HEX0 = sdm[num4]; // Número 4
+    HEX1 = sdm[num3]; // Número 3
+    HEX2 = sdm[num2]; // Número 2
+    HEX3 = sdm[num1]; // Número 1
+    HEX4 = sdm[num0]; // Número 0
+    HEX5 = sdm[10]; // -
+    HEX6 = sdm[p0]; // Prêmio
+    HEX7 = sdm[11]; // P
+    LEDG = win; // Venceu?
 end
 endmodule

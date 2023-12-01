@@ -410,16 +410,18 @@ inout 		    [16:0]		HSMC_TX_D_P;
 //  REG/WIRE declarations
 //=======================================================
 
-Jogo Jogo (
+Loteria Loteria (
 	.clk(KEY[0]),
 	
 	.num(SW[3:0]),
 	
-	.insert(SW[16]),
+	.insert(SW[17]),
 	
-	.finish(SW[15]),
+	.finish(SW[16]),
 	
-	.reset(SW[14]),
+	.reset(SW[15]),
+	
+	.LEDR(LEDR[17:9]),
 	
 	.HEX0(HEX0[6:0]),
 	
@@ -437,7 +439,7 @@ Jogo Jogo (
 	
 	.HEX7(HEX7[6:0]),
 	
-	.LEDG8(LEDG[8])
+	.LEDG(LEDG[8])
 );
 
 //=======================================================

@@ -7,7 +7,7 @@ module Loteria (
     input wire reset, // Reset
 
     // Saídas
-    output reg [3:0] LEDR, // LEDR -> Estado
+    output reg [9:0] LEDR, // LEDR -> Estado
     output reg [6:0] HEX0, // Display 0 -> Número 4
     output reg [6:0] HEX1, // Display 1 -> Número 3
     output reg [6:0] HEX2, // Display 2 -> Número 2
@@ -16,7 +16,7 @@ module Loteria (
     output reg [6:0] HEX5, // Display 5 -> -
     output reg [6:0] HEX6, // Display 6 -> Prêmio
     output reg [6:0] HEX7, // Display 7 -> P
-    output reg LEDG8 // LEDG8 -> Venceu?
+    output reg LEDG // LEDG -> Venceu?
 );
 
 // Número - 50967
@@ -46,11 +46,12 @@ reg [3:0] num2; // Número 2
 reg [3:0] num3; // Número 3
 reg [3:0] num4; // Número 4
 reg [2:0] hits; // Acertos
-reg [1:0] lastTrue; // Último número inserido
+reg lastTrue; // Último número inserido
 reg win; // Venceu?
 reg [1:0] p0; // Prêmio
 
 reg [6:0] sdm [0:11]; // Mapa de Segmentos do Display
+reg [9:0] lrm [0:9]; // Mapa de LEDR
 
 initial begin
     state = s0;
@@ -64,6 +65,7 @@ initial begin
     lastTrue = 1'b0;
     win = 1'b0;
     p0 = 2'b00;
+
     sdm[0] = 7'b1000000; // 0
     sdm[1] = 7'b1111001; // 1
     sdm[2] = 7'b0100100; // 2
@@ -76,6 +78,17 @@ initial begin
     sdm[9] = 7'b0010000; // 9
     sdm[10] = 7'b0111111; // -
     sdm[11] = 7'b0001100; // P
+
+    lrm[0] = 9'b000000000; // S0
+    lrm[1] = 9'b000000001; // S1
+    lrm[2] = 9'b000000011; // S2
+    lrm[3] = 9'b000000111; // S3
+    lrm[4] = 9'b000001111; // S4
+    lrm[5] = 9'b000011111; // S5
+    lrm[6] = 9'b000111111; // S6
+    lrm[7] = 9'b001111111; // S7
+    lrm[8] = 9'b011111111; // S8
+    lrm[9] = 9'b111111111; // S9
 end
 
 always @(posedge clk) begin
@@ -165,13 +178,11 @@ always @(posedge clk) begin
                     state = s8; // Prêmio 1
                 end
                 else if (hits == 3'b010 && lastTrue == 1'b1) begin
-                    state = s9 // Prêmio 2
+                    state = s9; // Prêmio 2
                 end
                 else begin
-                    state = s7; // Sem prêmio
+                    state = s7; // Prêmio 0
                 end
-                state = s0;
-                hits = 3'b000;
             end
             s7 : begin
                 // Prêmio 0
@@ -192,8 +203,8 @@ always @(posedge clk) begin
     end
 end
 
-always @(num0, num1, num2, num3, num4, p0) begin
-    LEDR = state;
+always @(state, num0, num1, num2, num3, num4, p0) begin
+    LEDR = lrm[state];
     HEX0 = sdm[num4];
     HEX1 = sdm[num3];
     HEX2 = sdm[num2];
@@ -202,6 +213,6 @@ always @(num0, num1, num2, num3, num4, p0) begin
     HEX5 = sdm[10];
     HEX6 = sdm[p0];
     HEX7 = sdm[11];
-    LEDG8 = win;
+    LEDG = win;
 end
 endmodule

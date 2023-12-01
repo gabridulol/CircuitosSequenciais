@@ -112,64 +112,64 @@ always @(posedge clk) begin
         case (state)
             s0 : begin
                 // Aguardando inserção do primeiro número
-                    if (insert) begin
-                        if(num <= 4'b1001) begin
-                            num0 = num;
-                            if (num == b0) begin
-                                hits = hits + 1;
-                            end
-                            state = s1;
+                if (insert) begin
+                    if(num <= 4'b1001) begin
+                        num0 = num;
+                        if (num == b0) begin
+                            hits = hits + 1;
+                        end
+                        state = s1;
                     end
                 end
             end
             s1 : begin
                 // Aguardando inserção do segundo número
-                    if (insert) begin
-                        if(num <= 4'b1001) begin
-                            num1 = num;
-                            if (num == b1) begin
-                                hits = hits + 1;
-                            end
-                            auxHits = hits;
-                            else begin
-                                hits = 0;
-                            end
-                            state = s2;
+                if (insert) begin
+                    if(num <= 4'b1001) begin
+                        num1 = num;
+                        if (num == b1) begin
+                            hits = hits + 1;
+                        end
+                        auxHits = hits;
+                        else begin
+                            hits = 0;
+                        end
+                        state = s2;
                     end
                 end
             end
             s2 : begin
                 // Aguardando inserção do terceiro número
-                    if (insert) begin
-                        if(num <= 4'b1001) begin
-                            num2 = num;
-                            if (num == b2) begin
-                                hits = hits + 1;
-                            end
-                            auxHits = hits;
-                            else begin
-                                hits = 0;
-                            end
-                            state = s3;
+                if (insert) begin
+                    if(num <= 4'b1001) begin
+                        num2 = num;
+                        if (num == b2) begin
+                            hits = hits + 1;
+                        end
+                        auxHits = hits;
+                        else begin
+                            hits = 0;
+                        end
+                        state = s3;
                     end
                 end
             end
             s3 : begin
-                // Aguardando inserção do quarto número
-                    if (insert) begin
-                        if(num <= 4'b1001) begin        
-                            num3 = num;
-                            if (num == b3) begin
-                                hits = hits + 1;
-                            end
-                            auxHits = hits;
-                            else begin
-                                hits = 0;
-                            end
-                            state = s4;
+            // Aguardando inserção do quarto número
+            if (insert) begin
+                    if(num <= 4'b1001) begin        
+                        num3 = num;
+                        if (num == b3) begin
+                            hits = hits + 1;
+                        end
+                        auxHits = hits;
+                        else begin
+                            hits = 0;
+                        end
+                        state = s4;
                     end
                 end
-        end
+            end
             s4 : begin
                 // Aguardando inserção do quinto número
                 if (insert) begin

@@ -70,9 +70,9 @@ initial begin
 
     hits = 3'b000;
     auxHits = 3'b000;
-    lastTrue = 0;
+    lastTrue = 1'b0;
 
-    win = 0;
+    win = 1'b0;
     p0 = 2'b00;
 
     sdm[0] = 7'b1000000; // 0
@@ -111,9 +111,9 @@ always @(posedge clk) begin
 
         hits = 3'b000;
         auxHits = 3'b000;
-        lastTrue = 0;
+        lastTrue = 1'b0;
 
-        win = 0;
+        win = 1'b0;
         p0 = 2'b00;
     end
     else begin
@@ -121,11 +121,14 @@ always @(posedge clk) begin
             s0 : begin
                 // Aguardando inserção do primeiro número
                 if (insert) begin
-                    if(num <= 4'b1001) begin
+                    // Verificando se o número é válido
+                    if (num <= 4'b1001) begin
                         num0 = num;
+                        // Verificando se o número é igual ao número sorteado
                         if (num == b0) begin
-                            hits = hits + 1;
+                            hits = hits + 1'b1;
                         end
+                        // Próximo estado
                         state = s1;
                     end
                 end
@@ -133,17 +136,21 @@ always @(posedge clk) begin
             s1 : begin
                 // Aguardando inserção do segundo número
                 if (insert) begin
-                    if(num <= 4'b1001) begin
+                    // Verificando se o número é válido
+                    if (num <= 4'b1001) begin
                         num1 = num;
+                        // Verificando se o número é igual ao número sorteado
                         if (num == b1) begin
-                            hits = hits + 1;
+                            hits = hits + 1'b1;
                         end
                         else begin
-                            hits = 0;
+                            hits = 1'b0;
                         end
+                        // Verificando sequência de acertos
                         if (hits > auxHits) begin
                             auxHits = hits;
                         end
+                        // Próximo estado
                         state = s2;
                     end
                 end
@@ -151,17 +158,21 @@ always @(posedge clk) begin
             s2 : begin
                 // Aguardando inserção do terceiro número
                 if (insert) begin
-                    if(num <= 4'b1001) begin
+                    // Verificando se o número é válido
+                    if (num <= 4'b1001) begin
                         num2 = num;
+                        // Verificando se o número é igual ao número sorteado
                         if (num == b2) begin
-                            hits = hits + 1;
+                            hits = hits + 1'b1;
                         end
                         else begin
-                            hits = 0;
+                            hits = 1'b0;
                         end
+                        // Verificando sequência de acertos
                         if (hits > auxHits) begin
                             auxHits = hits;
                         end
+                        // Próximo estado
                         state = s3;
                     end
                 end
@@ -169,17 +180,21 @@ always @(posedge clk) begin
             s3 : begin
                 // Aguardando inserção do quarto número
                 if (insert) begin
+                    // Verificando se o número é válido
                     if(num <= 4'b1001) begin        
                         num3 = num;
+                        // Verificando se o número é igual ao número sorteado
                         if (num == b3) begin
-                            hits = hits + 1;
+                            hits = hits + 1'b1;
                         end
                         else begin
-                            hits = 0;
+                            hits = 1'b0;
                         end
+                        // Verificando sequência de acertos
                         if (hits > auxHits) begin
                             auxHits = hits;
                         end
+                        // Próximo estado
                         state = s4;
                     end
                 end
@@ -187,8 +202,10 @@ always @(posedge clk) begin
             s4 : begin
                 // Aguardando inserção do quinto número
                 if (insert) begin
+                    // Verificando se o número é válido
                     if (num <= 4'b1001) begin
                         num4 = num;
+                        // Verificando se o número é igual ao número sorteado
                         if (num == b4) begin
                             lastTrue = 1'b1;
                         end
@@ -201,14 +218,17 @@ always @(posedge clk) begin
                 if (finish) begin
                     // Verificando para prêmio 1
                     if (auxHits == 3'b100 || (auxHits == 3'b011 && lastTrue == 1'b1)) begin
+                        // Avança para estado de vitória para prêmio 1
                         state = s7; // Prêmio 1
                     end
                     // Verificando para prêmio 2
                     else if (auxHits == 3'b010 && lastTrue == 1'b1) begin
+                        // Avança para estado de vitória para prêmio 2
                         state = s8; // Prêmio 2
                     end
                     // Verificando para prêmio 0
                     else begin
+                        // Avança para estado de vitória para prêmio 0
                         state = s6; // Prêmio 0
                     end
                 end

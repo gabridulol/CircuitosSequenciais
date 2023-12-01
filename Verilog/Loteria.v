@@ -130,9 +130,11 @@ always @(posedge clk) begin
                         if (num == b1) begin
                             hits = hits + 1;
                         end
-                        auxHits = hits;
                         else begin
                             hits = 0;
+                        end
+                        if(hits > 3'b000) begin
+                            auxHits = hits;
                         end
                         state = s2;
                     end
@@ -146,9 +148,11 @@ always @(posedge clk) begin
                         if (num == b2) begin
                             hits = hits + 1;
                         end
-                        auxHits = hits;
                         else begin
                             hits = 0;
+                        end
+                        if(hits > 3'b000) begin
+                            auxHits = hits;
                         end
                         state = s3;
                     end
@@ -162,9 +166,11 @@ always @(posedge clk) begin
                         if (num == b3) begin
                             hits = hits + 1;
                         end
-                        auxHits = hits;
                         else begin
                             hits = 0;
+                        end
+                        if(hits > 3'b000) begin
+                            auxHits = hits;
                         end
                         state = s4;
                     end

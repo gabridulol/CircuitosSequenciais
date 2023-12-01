@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Fri Dec  1 15:07:25 2023
+Fri Dec  1 15:21:34 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -46,13 +46,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec  1 15:07:25 2023          ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec  1 15:21:34 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; DE2_115                                        ;
 ; Top-level Entity Name              ; DE2_115                                        ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 116                                            ;
-;     Total combinational functions  ; 100                                            ;
+; Total logic elements               ; 135                                            ;
+;     Total combinational functions  ; 119                                            ;
 ;     Dedicated logic registers      ; 34                                             ;
 ; Total registers                    ; 34                                             ;
 ; Total pins                         ; 525                                            ;
@@ -162,7 +162,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-14        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-14        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -181,16 +182,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 116          ;
+; Estimated Total logic elements              ; 135          ;
 ;                                             ;              ;
-; Total combinational functions               ; 100          ;
+; Total combinational functions               ; 119          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 78           ;
-;     -- 3 input functions                    ; 8            ;
-;     -- <=2 input functions                  ; 14           ;
+;     -- 4 input functions                    ; 87           ;
+;     -- 3 input functions                    ; 16           ;
+;     -- <=2 input functions                  ; 16           ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 100          ;
+;     -- normal mode                          ; 119          ;
 ;     -- arithmetic mode                      ; 0            ;
 ;                                             ;              ;
 ; Total registers                             ; 34           ;
@@ -203,8 +204,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
 ; Maximum fan-out                             ; 34           ;
-; Total fan-out                               ; 1258         ;
-; Average fan-out                             ; 0.90         ;
+; Total fan-out                               ; 1322         ;
+; Average fan-out                             ; 0.93         ;
 +---------------------------------------------+--------------+
 
 
@@ -213,8 +214,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+-------------+--------------+
-; |DE2_115                   ; 100 (0)             ; 34 (0)                    ; 0           ; 0            ; 0       ; 0         ; 525  ; 0            ; |DE2_115                 ; DE2_115     ; work         ;
-;    |Loteria:Loteria|       ; 100 (100)           ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Loteria:Loteria ; Loteria     ; work         ;
+; |DE2_115                   ; 119 (0)             ; 34 (0)                    ; 0           ; 0            ; 0       ; 0         ; 525  ; 0            ; |DE2_115                 ; DE2_115     ; work         ;
+;    |Loteria:Loteria|       ; 119 (119)           ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Loteria:Loteria ; Loteria     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -244,9 +245,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|Loteria:Loteria|num2[2]    ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|Loteria:Loteria|num1[3]    ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|Loteria:Loteria|num0[3]    ;
-; 17:1               ; 3 bits    ; 33 LEs        ; 6 LEs                ; 27 LEs                 ; Yes        ; |DE2_115|Loteria:Loteria|p0[0]      ;
-; 19:1               ; 3 bits    ; 36 LEs        ; 6 LEs                ; 30 LEs                 ; Yes        ; |DE2_115|Loteria:Loteria|auxHits[2] ;
-; 21:1               ; 3 bits    ; 42 LEs        ; 9 LEs                ; 33 LEs                 ; Yes        ; |DE2_115|Loteria:Loteria|hits[0]    ;
+; 17:1               ; 3 bits    ; 33 LEs        ; 6 LEs                ; 27 LEs                 ; Yes        ; |DE2_115|Loteria:Loteria|p0[1]      ;
+; 20:1               ; 3 bits    ; 39 LEs        ; 6 LEs                ; 33 LEs                 ; Yes        ; |DE2_115|Loteria:Loteria|auxHits[1] ;
+; 21:1               ; 3 bits    ; 42 LEs        ; 9 LEs                ; 33 LEs                 ; Yes        ; |DE2_115|Loteria:Loteria|hits[1]    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 
 
@@ -294,16 +295,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 5                           ;
 ;     plain             ; 1                           ;
 ; cycloneiii_io_obuf    ; 213                         ;
-; cycloneiii_lcell_comb ; 108                         ;
-;     normal            ; 108                         ;
+; cycloneiii_lcell_comb ; 127                         ;
+;     normal            ; 127                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 6                           ;
-;         2 data inputs ; 14                          ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 78                          ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 87                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 0.87                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 1.14                        ;
 +-----------------------+-----------------------------+
 
 
@@ -322,7 +323,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Fri Dec  1 15:07:20 2023
+    Info: Processing started: Fri Dec  1 15:21:29 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2_115 -c DE2_115
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -400,17 +401,17 @@ Warning (10034): Output port "HSMC_CLKOUT_P1" at DE2_115.v(399) has no driver Fi
 Warning (10034): Output port "HSMC_CLKOUT_P2" at DE2_115.v(400) has no driver File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/DE2_115.v Line: 400
 Warning (10034): Output port "HSMC_CLKOUT0" at DE2_115.v(401) has no driver File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/DE2_115.v Line: 401
 Info (12128): Elaborating entity "Loteria" for hierarchy "Loteria:Loteria" File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/DE2_115.v Line: 443
-Warning (10230): Verilog HDL assignment warning at Verilog1.v(117): truncated value with size 32 to match size of target (3) File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 117
-Warning (10230): Verilog HDL assignment warning at Verilog1.v(129): truncated value with size 32 to match size of target (3) File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 129
-Warning (10230): Verilog HDL assignment warning at Verilog1.v(147): truncated value with size 32 to match size of target (3) File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 147
-Warning (10230): Verilog HDL assignment warning at Verilog1.v(165): truncated value with size 32 to match size of target (3) File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 165
-Warning (10027): Verilog HDL or VHDL warning at the Verilog1.v(230): index expression is not wide enough to address all of the elements in the array File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 230
-Warning (10235): Verilog HDL Always Construct warning at Verilog1.v(232): variable "win" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 232
-Warning (10030): Net "lrm.data_a" at Verilog1.v(54) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 54
-Warning (10030): Net "lrm.waddr_a" at Verilog1.v(54) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 54
-Warning (10030): Net "lrm.we_a" at Verilog1.v(54) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 54
+Warning (10230): Verilog HDL assignment warning at Verilog1.v(123): truncated value with size 32 to match size of target (3) File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 123
+Warning (10230): Verilog HDL assignment warning at Verilog1.v(135): truncated value with size 32 to match size of target (3) File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 135
+Warning (10230): Verilog HDL assignment warning at Verilog1.v(153): truncated value with size 32 to match size of target (3) File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 153
+Warning (10230): Verilog HDL assignment warning at Verilog1.v(171): truncated value with size 32 to match size of target (3) File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 171
+Warning (10027): Verilog HDL or VHDL warning at the Verilog1.v(236): index expression is not wide enough to address all of the elements in the array File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 236
+Warning (10235): Verilog HDL Always Construct warning at Verilog1.v(238): variable "win" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 238
+Warning (10030): Net "lrm.data_a" at Verilog1.v(57) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 57
+Warning (10030): Net "lrm.waddr_a" at Verilog1.v(57) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 57
+Warning (10030): Net "lrm.we_a" at Verilog1.v(57) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 57
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "Loteria:Loteria|lrm" is uninferred due to inappropriate RAM size File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 54
+    Info (276004): RAM logic "Loteria:Loteria|lrm" is uninferred due to inappropriate RAM size File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/Verilog1.v Line: 57
 Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (9) in the Memory Initialization File "/home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/db/DE2_115.ram0_Loteria_248589c.hdl.mif" -- setting initial value for remaining addresses to 0
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
@@ -886,15 +887,15 @@ Warning (21074): Design contains 69 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "HSMC_CLKIN_P1" File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/DE2_115.v Line: 394
     Warning (15610): No output dependent on input pin "HSMC_CLKIN_P2" File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/DE2_115.v Line: 395
     Warning (15610): No output dependent on input pin "HSMC_CLKIN0" File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/DE2_115.v Line: 396
-Info (21057): Implemented 645 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 665 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 77 input pins
     Info (21059): Implemented 235 output pins
     Info (21060): Implemented 213 bidirectional pins
-    Info (21061): Implemented 120 logic cells
+    Info (21061): Implemented 140 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 551 warnings
-    Info: Peak virtual memory: 499 megabytes
-    Info: Processing ended: Fri Dec  1 15:07:25 2023
+    Info: Peak virtual memory: 487 megabytes
+    Info: Processing ended: Fri Dec  1 15:21:34 2023
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Total CPU time (on all processors): 00:00:13
 
 

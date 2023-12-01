@@ -1,5 +1,5 @@
 Timing Analyzer report for DE2_115
-Fri Dec  1 15:07:38 2023
+Fri Dec  1 15:21:47 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -99,15 +99,15 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 20          ;
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
-; Average used               ; 1.08        ;
+; Average used               ; 1.09        ;
 ; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.4%      ;
-;     Processor 3            ;   1.2%      ;
-;     Processor 4            ;   1.0%      ;
-;     Processors 5-14        ;   0.5%      ;
+;     Processor 2            ;   1.6%      ;
+;     Processor 3            ;   1.4%      ;
+;     Processor 4            ;   1.2%      ;
+;     Processors 5-14        ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -125,7 +125,7 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 325.63 MHz ; 250.0 MHz       ; KEY[0]     ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 266.67 MHz ; 250.0 MHz       ; KEY[0]     ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -141,7 +141,7 @@ HTML report is unavailable in plain text report export.
 +--------+--------+-------------------+
 ; Clock  ; Slack  ; End Point TNS     ;
 +--------+--------+-------------------+
-; KEY[0] ; -2.071 ; -63.308           ;
+; KEY[0] ; -2.750 ; -65.684           ;
 +--------+--------+-------------------+
 
 
@@ -180,106 +180,106 @@ No paths to report.
 +--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; -2.071 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.145     ; 2.944      ;
-; -2.071 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.145     ; 2.944      ;
-; -2.071 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.145     ; 2.944      ;
-; -2.055 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.331     ; 2.742      ;
-; -2.055 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.331     ; 2.742      ;
-; -2.055 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.331     ; 2.742      ;
-; -2.029 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.098     ; 2.949      ;
-; -2.029 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.098     ; 2.949      ;
-; -2.029 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.098     ; 2.949      ;
-; -2.028 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.744      ;
-; -2.028 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.744      ;
-; -2.028 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.744      ;
-; -2.028 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.744      ;
-; -2.026 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.218     ; 2.826      ;
-; -2.026 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.218     ; 2.826      ;
-; -2.022 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.317     ; 2.723      ;
-; -2.022 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.317     ; 2.723      ;
-; -2.022 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.317     ; 2.723      ;
-; -2.016 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.267     ; 2.767      ;
-; -2.016 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.267     ; 2.767      ;
-; -2.016 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.267     ; 2.767      ;
-; -2.016 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.267     ; 2.767      ;
-; -2.015 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.145     ; 2.888      ;
-; -2.015 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.145     ; 2.888      ;
-; -2.015 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.145     ; 2.888      ;
-; -1.992 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.277     ; 2.733      ;
-; -1.992 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.277     ; 2.733      ;
-; -1.992 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.277     ; 2.733      ;
-; -1.992 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.277     ; 2.733      ;
-; -1.955 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.280     ; 2.693      ;
-; -1.955 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.280     ; 2.693      ;
-; -1.955 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.280     ; 2.693      ;
-; -1.955 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.280     ; 2.693      ;
-; -1.941 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.080     ; 2.879      ;
-; -1.941 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.080     ; 2.879      ;
-; -1.941 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.080     ; 2.879      ;
-; -1.941 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.080     ; 2.879      ;
-; -1.928 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.331     ; 2.615      ;
-; -1.928 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.331     ; 2.615      ;
-; -1.928 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.331     ; 2.615      ;
-; -1.901 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.617      ;
-; -1.901 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.617      ;
-; -1.901 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.617      ;
-; -1.901 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.617      ;
-; -1.895 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.317     ; 2.596      ;
-; -1.895 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.317     ; 2.596      ;
-; -1.895 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.317     ; 2.596      ;
-; -1.891 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.218     ; 2.691      ;
-; -1.891 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.218     ; 2.691      ;
-; -1.889 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.267     ; 2.640      ;
-; -1.889 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.267     ; 2.640      ;
-; -1.889 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.267     ; 2.640      ;
-; -1.889 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.267     ; 2.640      ;
-; -1.885 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.280     ; 2.623      ;
-; -1.885 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.280     ; 2.623      ;
-; -1.885 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.280     ; 2.623      ;
-; -1.885 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.280     ; 2.623      ;
-; -1.865 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.277     ; 2.606      ;
-; -1.865 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.277     ; 2.606      ;
-; -1.865 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.277     ; 2.606      ;
-; -1.865 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.277     ; 2.606      ;
-; -1.845 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.098     ; 2.765      ;
-; -1.845 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.098     ; 2.765      ;
-; -1.845 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.098     ; 2.765      ;
-; -1.805 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.080     ; 2.743      ;
-; -1.805 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.080     ; 2.743      ;
-; -1.805 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.080     ; 2.743      ;
-; -1.805 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.080     ; 2.743      ;
-; -1.751 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.098     ; 2.671      ;
-; -1.751 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.098     ; 2.671      ;
-; -1.751 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.098     ; 2.671      ;
-; -1.735 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.735      ;
-; -1.735 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.735      ;
-; -1.675 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 2.669      ;
-; -1.667 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 2.661      ;
-; -1.666 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.282     ; 2.402      ;
-; -1.666 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.282     ; 2.402      ;
-; -1.666 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.282     ; 2.402      ;
-; -1.666 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.282     ; 2.402      ;
-; -1.591 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.272     ; 2.337      ;
-; -1.584 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.272     ; 2.330      ;
-; -1.554 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 2.476      ;
-; -1.554 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 2.476      ;
-; -1.554 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 2.476      ;
-; -1.554 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 2.476      ;
-; -1.548 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.548      ;
-; -1.548 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.548      ;
-; -1.539 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.282     ; 2.275      ;
-; -1.539 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.282     ; 2.275      ;
-; -1.539 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.282     ; 2.275      ;
-; -1.539 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.282     ; 2.275      ;
-; -1.524 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.091     ; 2.451      ;
-; -1.524 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.091     ; 2.451      ;
-; -1.524 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.091     ; 2.451      ;
-; -1.524 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.091     ; 2.451      ;
-; -1.506 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 2.500      ;
-; -1.489 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.117     ; 2.390      ;
-; -1.489 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.117     ; 2.390      ;
-; -1.489 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.117     ; 2.390      ;
-; -1.480 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.102     ; 2.396      ;
+; -2.750 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.065     ; 3.703      ;
+; -2.750 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.065     ; 3.703      ;
+; -2.750 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.065     ; 3.703      ;
+; -2.684 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.065     ; 3.637      ;
+; -2.684 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.065     ; 3.637      ;
+; -2.684 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.065     ; 3.637      ;
+; -2.659 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.065     ; 3.612      ;
+; -2.659 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.065     ; 3.612      ;
+; -2.659 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.065     ; 3.612      ;
+; -2.649 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.048     ; 3.619      ;
+; -2.649 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.048     ; 3.619      ;
+; -2.649 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.048     ; 3.619      ;
+; -2.622 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.544      ;
+; -2.622 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.544      ;
+; -2.622 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.544      ;
+; -2.531 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.453      ;
+; -2.531 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.453      ;
+; -2.531 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.453      ;
+; -2.470 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.392      ;
+; -2.470 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.392      ;
+; -2.470 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.392      ;
+; -2.441 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.048     ; 3.411      ;
+; -2.441 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.048     ; 3.411      ;
+; -2.441 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.048     ; 3.411      ;
+; -2.287 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.209      ;
+; -2.287 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.209      ;
+; -2.287 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.096     ; 3.209      ;
+; -2.219 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 3.228      ;
+; -2.219 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 3.228      ;
+; -2.219 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 3.228      ;
+; -2.219 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 3.228      ;
+; -2.203 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.048     ; 3.173      ;
+; -2.203 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.048     ; 3.173      ;
+; -2.203 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.048     ; 3.173      ;
+; -2.094 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.042     ; 3.070      ;
+; -2.094 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.042     ; 3.070      ;
+; -2.018 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 3.027      ;
+; -2.018 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 3.027      ;
+; -2.018 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 3.027      ;
+; -2.018 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 3.027      ;
+; -2.012 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.047     ; 2.983      ;
+; -2.011 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 3.050      ;
+; -2.011 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 3.050      ;
+; -2.011 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 3.050      ;
+; -2.011 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 3.050      ;
+; -2.000 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.047     ; 2.971      ;
+; -1.981 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.047     ; 2.952      ;
+; -1.949 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.127     ; 2.840      ;
+; -1.944 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.127     ; 2.835      ;
+; -1.920 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.959      ;
+; -1.920 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.959      ;
+; -1.920 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.959      ;
+; -1.920 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.959      ;
+; -1.919 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.928      ;
+; -1.919 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.928      ;
+; -1.919 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.928      ;
+; -1.919 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.928      ;
+; -1.905 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.914      ;
+; -1.905 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.914      ;
+; -1.905 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.914      ;
+; -1.905 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.914      ;
+; -1.900 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.042     ; 2.876      ;
+; -1.900 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.042     ; 2.876      ;
+; -1.888 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.047     ; 2.859      ;
+; -1.884 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.923      ;
+; -1.884 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.923      ;
+; -1.884 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.923      ;
+; -1.884 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.923      ;
+; -1.833 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.127     ; 2.724      ;
+; -1.825 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.127     ; 2.716      ;
+; -1.798 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.127     ; 2.689      ;
+; -1.795 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.804      ;
+; -1.795 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.804      ;
+; -1.795 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.804      ;
+; -1.795 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.009     ; 2.804      ;
+; -1.786 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.127     ; 2.677      ;
+; -1.774 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.813      ;
+; -1.774 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.813      ;
+; -1.774 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.813      ;
+; -1.774 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.813      ;
+; -1.749 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.788      ;
+; -1.749 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.788      ;
+; -1.749 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.788      ;
+; -1.749 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.788      ;
+; -1.748 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.123     ; 2.643      ;
+; -1.748 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.123     ; 2.643      ;
+; -1.748 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.123     ; 2.643      ;
+; -1.718 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.127     ; 2.609      ;
+; -1.696 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.127     ; 2.587      ;
+; -1.657 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.123     ; 2.552      ;
+; -1.657 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.123     ; 2.552      ;
+; -1.657 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.123     ; 2.552      ;
+; -1.646 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.685      ;
+; -1.646 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.685      ;
+; -1.646 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.685      ;
+; -1.646 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.021      ; 2.685      ;
+; -1.646 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.127     ; 2.537      ;
+; -1.643 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.042     ; 2.619      ;
+; -1.643 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.042     ; 2.619      ;
+; -1.638 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.047     ; 2.609      ;
 +--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -288,106 +288,106 @@ No paths to report.
 +-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; 0.440 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.669      ;
-; 0.440 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.669      ;
-; 0.440 ; Loteria:Loteria|p0[1]      ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.669      ;
-; 0.440 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.669      ;
-; 0.440 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; Loteria:Loteria|p0[1]      ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.445 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.674      ;
-; 0.774 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 0.985      ;
-; 0.787 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 0.998      ;
-; 0.816 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.128      ; 1.130      ;
-; 0.816 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.128      ; 1.130      ;
-; 0.901 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.049      ; 1.136      ;
-; 0.904 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.049      ; 1.139      ;
-; 0.929 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.331      ; 1.446      ;
-; 0.989 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.048      ; 1.223      ;
-; 0.996 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.048      ; 1.230      ;
-; 1.012 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.331      ; 1.529      ;
-; 1.015 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.331      ; 1.532      ;
-; 1.038 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 1.249      ;
-; 1.088 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.049      ; 1.323      ;
-; 1.091 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.049      ; 1.326      ;
-; 1.108 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.069      ; 1.363      ;
-; 1.109 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.069      ; 1.364      ;
-; 1.109 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.069      ; 1.364      ;
-; 1.117 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 1.328      ;
-; 1.135 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.048      ; 1.369      ;
-; 1.137 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.048      ; 1.371      ;
-; 1.155 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 1.366      ;
-; 1.215 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.069      ; 1.470      ;
-; 1.236 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.048      ; 1.470      ;
-; 1.321 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.272      ; 1.779      ;
-; 1.324 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.069      ; 1.579      ;
-; 1.333 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.331      ; 1.850      ;
-; 1.336 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 1.547      ;
-; 1.338 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.272      ; 1.796      ;
-; 1.344 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.069      ; 1.599      ;
-; 1.377 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.093     ; 1.470      ;
-; 1.385 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.049      ; 1.620      ;
-; 1.387 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.037     ; 1.536      ;
-; 1.399 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.093     ; 1.492      ;
-; 1.412 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.037     ; 1.561      ;
-; 1.435 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.272      ; 1.893      ;
-; 1.438 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.049      ; 1.673      ;
-; 1.455 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 1.665      ;
-; 1.456 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 1.666      ;
-; 1.456 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 1.666      ;
-; 1.464 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.331      ; 1.981      ;
-; 1.477 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.331      ; 1.994      ;
-; 1.489 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.049      ; 1.724      ;
-; 1.533 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.049      ; 1.768      ;
-; 1.574 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.272      ; 2.032      ;
-; 1.578 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.049      ; 1.813      ;
-; 1.583 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.272      ; 2.041      ;
-; 1.606 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.093     ; 1.699      ;
-; 1.721 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.145      ; 2.052      ;
-; 1.732 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.049      ; 1.967      ;
-; 1.748 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 1.958      ;
-; 1.749 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 1.959      ;
-; 1.749 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 1.959      ;
-; 1.783 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.145      ; 2.114      ;
-; 1.793 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.272      ; 2.251      ;
-; 1.795 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.093     ; 1.888      ;
-; 1.798 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.093     ; 1.891      ;
-; 1.825 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.093     ; 1.918      ;
-; 1.852 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.145      ; 2.183      ;
-; 1.925 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.145      ; 2.256      ;
-; 1.926 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.093     ; 2.019      ;
-; 1.962 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.075      ; 2.223      ;
-; 1.962 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.075      ; 2.223      ;
-; 1.962 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.075      ; 2.223      ;
-; 1.962 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.075      ; 2.223      ;
-; 2.017 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.081      ; 2.284      ;
-; 2.017 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.081      ; 2.284      ;
-; 2.017 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.081      ; 2.284      ;
-; 2.017 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.081      ; 2.284      ;
-; 2.026 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.145      ; 2.357      ;
-; 2.029 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.145      ; 2.360      ;
-; 2.058 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.093     ; 2.151      ;
-; 2.081 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.077      ; 2.344      ;
-; 2.081 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.077      ; 2.344      ;
-; 2.081 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.077      ; 2.344      ;
-; 2.081 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.077      ; 2.344      ;
-; 2.097 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 2.323      ;
-; 2.097 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 2.323      ;
-; 2.097 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 2.323      ;
-; 2.097 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 2.323      ;
-; 2.128 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.104     ; 2.210      ;
-; 2.128 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.104     ; 2.210      ;
-; 2.128 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.104     ; 2.210      ;
-; 2.128 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.104     ; 2.210      ;
-; 2.147 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.077      ; 2.410      ;
-; 2.147 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.077      ; 2.410      ;
-; 2.147 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.077      ; 2.410      ;
-; 2.147 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.077      ; 2.410      ;
-; 2.168 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.081      ; 2.435      ;
-; 2.168 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.081      ; 2.435      ;
-; 2.168 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.081      ; 2.435      ;
-; 2.168 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.081      ; 2.435      ;
-; 2.193 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.128      ; 2.507      ;
-; 2.193 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.128      ; 2.507      ;
+; 0.525 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 0.758      ;
+; 0.723 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.157      ; 1.066      ;
+; 0.723 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.157      ; 1.066      ;
+; 0.723 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.157      ; 1.066      ;
+; 0.735 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.183      ; 1.104      ;
+; 0.746 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.183      ; 1.115      ;
+; 0.746 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 0.979      ;
+; 0.838 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.157      ; 1.181      ;
+; 0.856 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.157      ; 1.199      ;
+; 0.906 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.183      ; 1.275      ;
+; 0.940 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.157      ; 1.283      ;
+; 0.985 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 1.233      ;
+; 1.016 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 1.249      ;
+; 1.018 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 1.266      ;
+; 1.113 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.048      ; 1.347      ;
+; 1.117 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.048      ; 1.351      ;
+; 1.128 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 1.361      ;
+; 1.167 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.183      ; 1.536      ;
+; 1.193 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 1.441      ;
+; 1.203 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.048      ; 1.437      ;
+; 1.232 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.048      ; 1.466      ;
+; 1.237 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 1.470      ;
+; 1.279 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.116      ; 1.581      ;
+; 1.304 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 1.552      ;
+; 1.316 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.048      ; 1.550      ;
+; 1.319 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.116      ; 1.621      ;
+; 1.356 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 1.604      ;
+; 1.376 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 1.609      ;
+; 1.392 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 1.625      ;
+; 1.402 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.116      ; 1.704      ;
+; 1.454 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 1.687      ;
+; 1.481 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.116      ; 1.783      ;
+; 1.486 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.127      ; 1.799      ;
+; 1.487 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.127      ; 1.800      ;
+; 1.488 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.127      ; 1.801      ;
+; 1.521 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 1.754      ;
+; 1.558 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 1.806      ;
+; 1.573 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 1.806      ;
+; 1.630 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 1.863      ;
+; 1.711 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.096      ; 1.993      ;
+; 1.737 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 1.970      ;
+; 1.758 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 1.991      ;
+; 1.767 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.073      ;
+; 1.767 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.073      ;
+; 1.767 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.073      ;
+; 1.767 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.073      ;
+; 1.803 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 2.036      ;
+; 1.807 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.096      ; 2.089      ;
+; 1.829 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.096      ; 2.111      ;
+; 1.839 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.096      ; 2.121      ;
+; 1.854 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.249      ; 2.289      ;
+; 1.854 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.249      ; 2.289      ;
+; 1.854 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.249      ; 2.289      ;
+; 1.854 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.249      ; 2.289      ;
+; 1.858 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.164      ;
+; 1.858 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.164      ;
+; 1.858 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.164      ;
+; 1.858 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.164      ;
+; 1.883 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.189      ;
+; 1.883 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.189      ;
+; 1.883 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.189      ;
+; 1.883 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.189      ;
+; 1.934 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.217      ; 2.337      ;
+; 1.934 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.217      ; 2.337      ;
+; 1.934 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.217      ; 2.337      ;
+; 1.934 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.217      ; 2.337      ;
+; 1.935 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.096      ; 2.217      ;
+; 1.968 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 2.201      ;
+; 1.975 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.223      ;
+; 1.975 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.223      ;
+; 1.975 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.223      ;
+; 2.001 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.307      ;
+; 2.001 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.307      ;
+; 2.001 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.307      ;
+; 2.001 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.120      ; 2.307      ;
+; 2.011 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.096      ; 2.293      ;
+; 2.026 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.127      ; 2.339      ;
+; 2.027 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.127      ; 2.340      ;
+; 2.029 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.127      ; 2.342      ;
+; 2.048 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.218      ; 2.452      ;
+; 2.048 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.218      ; 2.452      ;
+; 2.048 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.218      ; 2.452      ;
+; 2.048 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.218      ; 2.452      ;
+; 2.069 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.047      ; 2.302      ;
+; 2.093 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.341      ;
+; 2.093 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.341      ;
+; 2.093 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.341      ;
+; 2.151 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.248      ; 2.585      ;
+; 2.151 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.248      ; 2.585      ;
+; 2.151 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.248      ; 2.585      ;
+; 2.151 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.248      ; 2.585      ;
+; 2.157 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.096      ; 2.439      ;
+; 2.175 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.183      ; 2.544      ;
 +-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -402,7 +402,7 @@ No synchronizer chains to report.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 354.86 MHz ; 250.0 MHz       ; KEY[0]     ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 293.94 MHz ; 250.0 MHz       ; KEY[0]     ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -412,7 +412,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------+------------------+
 ; Clock  ; Slack  ; End Point TNS    ;
 +--------+--------+------------------+
-; KEY[0] ; -1.818 ; -55.485          ;
+; KEY[0] ; -2.402 ; -57.619          ;
 +--------+--------+------------------+
 
 
@@ -451,106 +451,106 @@ No paths to report.
 +--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; -1.818 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.313     ; 2.524      ;
-; -1.818 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.313     ; 2.524      ;
-; -1.818 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.313     ; 2.524      ;
-; -1.797 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.514      ;
-; -1.797 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.514      ;
-; -1.797 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.514      ;
-; -1.794 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.285     ; 2.528      ;
-; -1.794 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.285     ; 2.528      ;
-; -1.794 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.285     ; 2.528      ;
-; -1.794 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.285     ; 2.528      ;
-; -1.790 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.260     ; 2.549      ;
-; -1.790 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.260     ; 2.549      ;
-; -1.790 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.260     ; 2.549      ;
-; -1.790 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.260     ; 2.549      ;
-; -1.789 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.137     ; 2.671      ;
-; -1.789 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.137     ; 2.671      ;
-; -1.789 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.137     ; 2.671      ;
-; -1.780 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.089     ; 2.710      ;
-; -1.780 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.089     ; 2.710      ;
-; -1.780 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.089     ; 2.710      ;
-; -1.760 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.262     ; 2.517      ;
-; -1.760 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.262     ; 2.517      ;
-; -1.760 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.262     ; 2.517      ;
-; -1.760 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.262     ; 2.517      ;
-; -1.747 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.207     ; 2.559      ;
-; -1.747 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.207     ; 2.559      ;
-; -1.737 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.137     ; 2.619      ;
-; -1.737 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.137     ; 2.619      ;
-; -1.737 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.137     ; 2.619      ;
-; -1.722 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.477      ;
-; -1.722 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.477      ;
-; -1.722 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.477      ;
-; -1.722 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.477      ;
-; -1.714 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.074     ; 2.659      ;
-; -1.714 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.074     ; 2.659      ;
-; -1.714 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.074     ; 2.659      ;
-; -1.714 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.074     ; 2.659      ;
-; -1.701 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.313     ; 2.407      ;
-; -1.701 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.313     ; 2.407      ;
-; -1.701 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.313     ; 2.407      ;
-; -1.680 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.397      ;
-; -1.680 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.397      ;
-; -1.680 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.302     ; 2.397      ;
-; -1.677 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.285     ; 2.411      ;
-; -1.677 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.285     ; 2.411      ;
-; -1.677 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.285     ; 2.411      ;
-; -1.677 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.285     ; 2.411      ;
-; -1.673 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.207     ; 2.485      ;
-; -1.673 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.207     ; 2.485      ;
-; -1.673 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.260     ; 2.432      ;
-; -1.673 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.260     ; 2.432      ;
-; -1.673 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.260     ; 2.432      ;
-; -1.673 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.260     ; 2.432      ;
-; -1.666 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.421      ;
-; -1.666 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.421      ;
-; -1.666 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.421      ;
-; -1.666 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.421      ;
-; -1.643 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.262     ; 2.400      ;
-; -1.643 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.262     ; 2.400      ;
-; -1.643 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.262     ; 2.400      ;
-; -1.643 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.262     ; 2.400      ;
-; -1.623 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.089     ; 2.553      ;
-; -1.623 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.089     ; 2.553      ;
-; -1.623 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.089     ; 2.553      ;
-; -1.585 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.074     ; 2.530      ;
-; -1.585 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.074     ; 2.530      ;
-; -1.585 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.074     ; 2.530      ;
-; -1.585 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.074     ; 2.530      ;
-; -1.534 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.089     ; 2.464      ;
-; -1.534 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.089     ; 2.464      ;
-; -1.534 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.089     ; 2.464      ;
-; -1.477 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.017     ; 2.479      ;
-; -1.477 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.017     ; 2.479      ;
-; -1.454 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.209      ;
-; -1.454 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.209      ;
-; -1.454 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.209      ;
-; -1.454 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.209      ;
-; -1.428 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.020     ; 2.427      ;
-; -1.420 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.020     ; 2.419      ;
-; -1.347 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.256     ; 2.110      ;
-; -1.337 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.092      ;
-; -1.337 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.092      ;
-; -1.337 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.092      ;
-; -1.337 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.264     ; 2.092      ;
-; -1.330 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.088     ; 2.261      ;
-; -1.330 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.088     ; 2.261      ;
-; -1.330 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.088     ; 2.261      ;
-; -1.330 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.088     ; 2.261      ;
-; -1.325 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.256     ; 2.088      ;
-; -1.307 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.017     ; 2.309      ;
-; -1.307 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.017     ; 2.309      ;
-; -1.292 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.095     ; 2.216      ;
-; -1.292 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.095     ; 2.216      ;
-; -1.292 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.095     ; 2.216      ;
-; -1.292 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.095     ; 2.216      ;
-; -1.287 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.086     ; 2.220      ;
-; -1.287 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.086     ; 2.220      ;
-; -1.287 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.086     ; 2.220      ;
-; -1.287 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.086     ; 2.220      ;
-; -1.277 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.112     ; 2.184      ;
+; -2.402 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 3.348      ;
+; -2.402 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 3.348      ;
+; -2.402 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 3.348      ;
+; -2.360 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 3.306      ;
+; -2.360 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 3.306      ;
+; -2.360 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 3.306      ;
+; -2.349 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 3.274      ;
+; -2.349 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 3.274      ;
+; -2.349 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 3.274      ;
+; -2.321 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 3.267      ;
+; -2.321 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 3.267      ;
+; -2.321 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 3.267      ;
+; -2.301 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 3.276      ;
+; -2.301 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 3.276      ;
+; -2.301 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 3.276      ;
+; -2.260 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 3.185      ;
+; -2.260 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 3.185      ;
+; -2.260 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 3.185      ;
+; -2.145 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 3.070      ;
+; -2.145 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 3.070      ;
+; -2.145 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 3.070      ;
+; -2.129 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 3.104      ;
+; -2.129 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 3.104      ;
+; -2.129 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 3.104      ;
+; -1.985 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 2.910      ;
+; -1.985 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 2.910      ;
+; -1.985 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.094     ; 2.910      ;
+; -1.916 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.917      ;
+; -1.916 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.917      ;
+; -1.916 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.917      ;
+; -1.916 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.917      ;
+; -1.897 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 2.872      ;
+; -1.897 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 2.872      ;
+; -1.897 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 2.872      ;
+; -1.882 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.049     ; 2.852      ;
+; -1.882 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.049     ; 2.852      ;
+; -1.787 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.788      ;
+; -1.787 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.788      ;
+; -1.787 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.788      ;
+; -1.787 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.788      ;
+; -1.784 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.813      ;
+; -1.784 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.813      ;
+; -1.784 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.813      ;
+; -1.784 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.813      ;
+; -1.748 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.043     ; 2.724      ;
+; -1.746 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.043     ; 2.722      ;
+; -1.721 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.043     ; 2.697      ;
+; -1.698 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.698      ;
+; -1.698 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.698      ;
+; -1.698 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.698      ;
+; -1.698 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.698      ;
+; -1.696 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.697      ;
+; -1.696 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.697      ;
+; -1.696 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.697      ;
+; -1.696 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.018     ; 2.697      ;
+; -1.695 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.724      ;
+; -1.695 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.724      ;
+; -1.695 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.724      ;
+; -1.695 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.724      ;
+; -1.688 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.110     ; 2.597      ;
+; -1.672 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.011      ; 2.702      ;
+; -1.672 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.011      ; 2.702      ;
+; -1.672 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.011      ; 2.702      ;
+; -1.672 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.011      ; 2.702      ;
+; -1.654 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.110     ; 2.563      ;
+; -1.649 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.043     ; 2.625      ;
+; -1.624 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.049     ; 2.594      ;
+; -1.624 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.049     ; 2.594      ;
+; -1.604 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.110     ; 2.513      ;
+; -1.596 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.110     ; 2.505      ;
+; -1.596 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.596      ;
+; -1.596 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.596      ;
+; -1.596 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.596      ;
+; -1.596 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.596      ;
+; -1.570 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.011      ; 2.600      ;
+; -1.570 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.011      ; 2.600      ;
+; -1.570 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.011      ; 2.600      ;
+; -1.570 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.011      ; 2.600      ;
+; -1.540 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.110     ; 2.449      ;
+; -1.514 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.110     ; 2.423      ;
+; -1.510 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.107     ; 2.422      ;
+; -1.510 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.107     ; 2.422      ;
+; -1.510 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.107     ; 2.422      ;
+; -1.495 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.524      ;
+; -1.495 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.524      ;
+; -1.495 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.524      ;
+; -1.495 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.524      ;
+; -1.488 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.110     ; 2.397      ;
+; -1.484 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.110     ; 2.393      ;
+; -1.443 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.472      ;
+; -1.443 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.472      ;
+; -1.443 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.472      ;
+; -1.443 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.010      ; 2.472      ;
+; -1.428 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.428      ;
+; -1.428 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.428      ;
+; -1.428 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.428      ;
+; -1.428 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.019     ; 2.428      ;
+; -1.428 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.110     ; 2.337      ;
+; -1.424 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.043     ; 2.400      ;
+; -1.421 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.107     ; 2.333      ;
 +--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -559,106 +559,106 @@ No paths to report.
 +-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; 0.387 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; Loteria:Loteria|p0[1]      ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; Loteria:Loteria|p0[1]      ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.398 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.039      ; 0.608      ;
-; 0.707 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.018      ; 0.896      ;
-; 0.723 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.018      ; 0.912      ;
-; 0.752 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.116      ; 1.039      ;
-; 0.752 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.116      ; 1.039      ;
-; 0.831 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.044      ; 1.046      ;
-; 0.833 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.313      ; 1.317      ;
-; 0.839 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.044      ; 1.054      ;
-; 0.905 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.042      ; 1.118      ;
-; 0.908 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.313      ; 1.392      ;
-; 0.910 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.042      ; 1.123      ;
-; 0.910 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.313      ; 1.394      ;
-; 0.941 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.018      ; 1.130      ;
-; 0.990 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.044      ; 1.205      ;
-; 0.992 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.044      ; 1.207      ;
-; 1.018 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.018      ; 1.207      ;
-; 1.019 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.256      ;
-; 1.020 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.257      ;
-; 1.020 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.257      ;
-; 1.038 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.042      ; 1.251      ;
-; 1.038 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.042      ; 1.251      ;
-; 1.054 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.018      ; 1.243      ;
-; 1.102 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.339      ;
-; 1.143 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.042      ; 1.356      ;
-; 1.179 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.313      ; 1.663      ;
-; 1.198 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.435      ;
-; 1.200 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.256      ; 1.627      ;
-; 1.204 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.441      ;
-; 1.221 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.256      ; 1.648      ;
-; 1.224 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.018      ; 1.413      ;
-; 1.229 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.044      ; 1.444      ;
-; 1.246 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.089     ; 1.328      ;
-; 1.283 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.089     ; 1.365      ;
-; 1.286 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.039     ; 1.418      ;
-; 1.298 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.313      ; 1.782      ;
-; 1.299 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.044      ; 1.514      ;
-; 1.299 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.256      ; 1.726      ;
-; 1.308 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.039     ; 1.440      ;
-; 1.323 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.020      ; 1.514      ;
-; 1.324 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.020      ; 1.515      ;
-; 1.324 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.020      ; 1.515      ;
-; 1.326 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.313      ; 1.810      ;
-; 1.359 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.044      ; 1.574      ;
-; 1.382 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.044      ; 1.597      ;
-; 1.402 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.044      ; 1.617      ;
-; 1.434 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.256      ; 1.861      ;
-; 1.443 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.089     ; 1.525      ;
-; 1.450 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.256      ; 1.877      ;
-; 1.541 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.044      ; 1.756      ;
-; 1.556 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.137      ; 1.864      ;
-; 1.590 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.020      ; 1.781      ;
-; 1.591 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.020      ; 1.782      ;
-; 1.591 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.020      ; 1.782      ;
-; 1.603 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.137      ; 1.911      ;
-; 1.615 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.256      ; 2.042      ;
-; 1.625 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.089     ; 1.707      ;
-; 1.630 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.089     ; 1.712      ;
-; 1.643 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.089     ; 1.725      ;
-; 1.688 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.137      ; 1.996      ;
-; 1.737 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.089     ; 1.819      ;
-; 1.740 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.137      ; 2.048      ;
-; 1.807 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.071      ; 2.049      ;
-; 1.807 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.071      ; 2.049      ;
-; 1.807 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.071      ; 2.049      ;
-; 1.807 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.071      ; 2.049      ;
-; 1.848 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.137      ; 2.156      ;
-; 1.853 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.137      ; 2.161      ;
-; 1.869 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 2.113      ;
-; 1.869 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 2.113      ;
-; 1.869 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 2.113      ;
-; 1.869 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 2.113      ;
-; 1.900 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.089     ; 1.982      ;
-; 1.931 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.164      ;
-; 1.931 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.164      ;
-; 1.931 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.164      ;
-; 1.931 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.164      ;
-; 1.933 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 2.139      ;
-; 1.933 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 2.139      ;
-; 1.933 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 2.139      ;
-; 1.933 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 2.139      ;
-; 1.939 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.098     ; 2.012      ;
-; 1.939 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.098     ; 2.012      ;
-; 1.939 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.098     ; 2.012      ;
-; 1.939 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.098     ; 2.012      ;
-; 1.980 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.213      ;
-; 1.980 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.213      ;
-; 1.980 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.213      ;
-; 1.980 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.062      ; 2.213      ;
-; 1.993 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.116      ; 2.280      ;
-; 1.993 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.116      ; 2.280      ;
-; 1.998 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 2.204      ;
-; 1.998 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 2.204      ;
-; 1.998 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 2.204      ;
-; 1.998 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 2.204      ;
+; 0.484 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.698      ;
+; 0.678 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.130      ; 0.979      ;
+; 0.678 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.130      ; 0.979      ;
+; 0.679 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.157      ; 1.007      ;
+; 0.679 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.130      ; 0.980      ;
+; 0.682 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 0.896      ;
+; 0.699 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.157      ; 1.027      ;
+; 0.791 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.130      ; 1.092      ;
+; 0.791 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.130      ; 1.092      ;
+; 0.842 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.157      ; 1.170      ;
+; 0.880 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.130      ; 1.181      ;
+; 0.899 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.136      ;
+; 0.920 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.157      ;
+; 0.940 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.154      ;
+; 1.009 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.045      ; 1.225      ;
+; 1.020 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.234      ;
+; 1.021 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.045      ; 1.237      ;
+; 1.070 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.307      ;
+; 1.079 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.157      ; 1.407      ;
+; 1.087 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.045      ; 1.303      ;
+; 1.118 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.332      ;
+; 1.127 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.045      ; 1.343      ;
+; 1.182 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.102      ; 1.455      ;
+; 1.185 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.422      ;
+; 1.199 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.045      ; 1.415      ;
+; 1.214 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.102      ; 1.487      ;
+; 1.222 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.459      ;
+; 1.232 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.446      ;
+; 1.268 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.482      ;
+; 1.293 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.102      ; 1.566      ;
+; 1.338 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.552      ;
+; 1.344 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.110      ; 1.625      ;
+; 1.345 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.110      ; 1.626      ;
+; 1.346 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.110      ; 1.627      ;
+; 1.353 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.102      ; 1.626      ;
+; 1.394 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.608      ;
+; 1.406 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.620      ;
+; 1.412 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 1.649      ;
+; 1.457 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.671      ;
+; 1.540 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.094      ; 1.805      ;
+; 1.555 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.769      ;
+; 1.591 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.805      ;
+; 1.602 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.094      ; 1.867      ;
+; 1.629 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.843      ;
+; 1.639 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.913      ;
+; 1.639 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.913      ;
+; 1.639 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.913      ;
+; 1.639 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.913      ;
+; 1.654 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.094      ; 1.919      ;
+; 1.662 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.094      ; 1.927      ;
+; 1.713 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.220      ; 2.104      ;
+; 1.713 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.220      ; 2.104      ;
+; 1.713 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.220      ; 2.104      ;
+; 1.713 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.220      ; 2.104      ;
+; 1.719 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.993      ;
+; 1.719 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.993      ;
+; 1.719 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.993      ;
+; 1.719 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.993      ;
+; 1.723 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.997      ;
+; 1.723 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.997      ;
+; 1.723 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.997      ;
+; 1.723 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 1.997      ;
+; 1.748 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 1.962      ;
+; 1.765 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.094      ; 2.030      ;
+; 1.789 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 2.026      ;
+; 1.789 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 2.026      ;
+; 1.789 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 2.026      ;
+; 1.796 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.188      ; 2.155      ;
+; 1.796 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.188      ; 2.155      ;
+; 1.796 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.188      ; 2.155      ;
+; 1.796 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.188      ; 2.155      ;
+; 1.815 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.110      ; 2.096      ;
+; 1.816 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.110      ; 2.097      ;
+; 1.817 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.110      ; 2.098      ;
+; 1.826 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 2.100      ;
+; 1.826 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 2.100      ;
+; 1.826 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 2.100      ;
+; 1.826 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.103      ; 2.100      ;
+; 1.854 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.094      ; 2.119      ;
+; 1.879 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.043      ; 2.093      ;
+; 1.893 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.189      ; 2.253      ;
+; 1.893 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.189      ; 2.253      ;
+; 1.893 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.189      ; 2.253      ;
+; 1.893 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.189      ; 2.253      ;
+; 1.896 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 2.133      ;
+; 1.896 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 2.133      ;
+; 1.896 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.066      ; 2.133      ;
+; 1.932 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.094      ; 2.197      ;
+; 1.944 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.094      ; 2.209      ;
+; 1.960 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.219      ; 2.350      ;
+; 1.960 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.219      ; 2.350      ;
+; 1.960 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.219      ; 2.350      ;
+; 1.960 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.219      ; 2.350      ;
 +-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -673,7 +673,7 @@ No synchronizer chains to report.
 +--------+--------+------------------+
 ; Clock  ; Slack  ; End Point TNS    ;
 +--------+--------+------------------+
-; KEY[0] ; -0.490 ; -12.391          ;
+; KEY[0] ; -0.791 ; -13.026          ;
 +--------+--------+------------------+
 
 
@@ -703,7 +703,7 @@ No paths to report.
 +--------+--------+--------------------------------+
 ; Clock  ; Slack  ; End Point TNS                  ;
 +--------+--------+--------------------------------+
-; KEY[0] ; -3.000 ; -42.540                        ;
+; KEY[0] ; -3.000 ; -42.128                        ;
 +--------+--------+--------------------------------+
 
 
@@ -712,106 +712,106 @@ No paths to report.
 +--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; -0.490 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 1.424      ;
-; -0.490 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 1.424      ;
-; -0.490 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 1.424      ;
-; -0.480 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 1.414      ;
-; -0.480 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 1.414      ;
-; -0.480 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.073     ; 1.414      ;
-; -0.471 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.092     ; 1.386      ;
-; -0.471 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.092     ; 1.386      ;
-; -0.431 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.054     ; 1.384      ;
-; -0.431 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.054     ; 1.384      ;
-; -0.431 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.054     ; 1.384      ;
-; -0.427 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.120     ; 1.314      ;
-; -0.427 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.120     ; 1.314      ;
-; -0.427 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.120     ; 1.314      ;
-; -0.427 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.120     ; 1.314      ;
-; -0.425 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.135     ; 1.297      ;
-; -0.425 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.135     ; 1.297      ;
-; -0.425 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.135     ; 1.297      ;
-; -0.425 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.135     ; 1.297      ;
-; -0.407 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.122     ; 1.292      ;
-; -0.407 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.122     ; 1.292      ;
-; -0.407 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.122     ; 1.292      ;
-; -0.407 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.122     ; 1.292      ;
-; -0.406 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.125     ; 1.288      ;
-; -0.406 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.125     ; 1.288      ;
-; -0.406 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.125     ; 1.288      ;
-; -0.406 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.125     ; 1.288      ;
-; -0.405 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.143     ; 1.269      ;
-; -0.405 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.143     ; 1.269      ;
-; -0.405 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.143     ; 1.269      ;
-; -0.402 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.132     ; 1.277      ;
-; -0.402 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.132     ; 1.277      ;
-; -0.402 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.132     ; 1.277      ;
-; -0.401 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.122     ; 1.286      ;
-; -0.401 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.122     ; 1.286      ;
-; -0.401 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.122     ; 1.286      ;
-; -0.401 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.122     ; 1.286      ;
-; -0.397 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.092     ; 1.312      ;
-; -0.397 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.092     ; 1.312      ;
-; -0.388 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 1.351      ;
-; -0.388 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 1.351      ;
-; -0.388 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 1.351      ;
-; -0.388 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 1.351      ;
-; -0.366 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.120     ; 1.253      ;
-; -0.366 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.120     ; 1.253      ;
-; -0.366 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.120     ; 1.253      ;
-; -0.366 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.120     ; 1.253      ;
-; -0.364 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.135     ; 1.236      ;
-; -0.364 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.135     ; 1.236      ;
-; -0.364 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.135     ; 1.236      ;
-; -0.364 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.135     ; 1.236      ;
-; -0.350 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.054     ; 1.303      ;
-; -0.350 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.054     ; 1.303      ;
-; -0.350 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.054     ; 1.303      ;
-; -0.345 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.143     ; 1.209      ;
-; -0.345 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.143     ; 1.209      ;
-; -0.345 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.143     ; 1.209      ;
-; -0.345 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.125     ; 1.227      ;
-; -0.345 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.125     ; 1.227      ;
-; -0.345 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.125     ; 1.227      ;
-; -0.345 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.125     ; 1.227      ;
-; -0.341 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.132     ; 1.216      ;
-; -0.341 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.132     ; 1.216      ;
-; -0.341 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.132     ; 1.216      ;
-; -0.326 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.014     ; 1.319      ;
-; -0.326 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.014     ; 1.319      ;
-; -0.322 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 1.285      ;
-; -0.322 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 1.285      ;
-; -0.322 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 1.285      ;
-; -0.322 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.044     ; 1.285      ;
-; -0.305 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.014     ; 1.298      ;
-; -0.305 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.014     ; 1.298      ;
-; -0.304 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.054     ; 1.257      ;
-; -0.304 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.054     ; 1.257      ;
-; -0.304 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.054     ; 1.257      ;
-; -0.272 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.053     ; 1.226      ;
-; -0.272 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.053     ; 1.226      ;
-; -0.272 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.053     ; 1.226      ;
-; -0.272 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.053     ; 1.226      ;
-; -0.266 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.114     ; 1.159      ;
-; -0.262 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.114     ; 1.155      ;
-; -0.255 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.055     ; 1.207      ;
-; -0.255 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.055     ; 1.207      ;
-; -0.255 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.055     ; 1.207      ;
-; -0.255 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.055     ; 1.207      ;
-; -0.241 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.014     ; 1.234      ;
-; -0.236 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.057     ; 1.186      ;
-; -0.236 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.057     ; 1.186      ;
-; -0.236 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.057     ; 1.186      ;
-; -0.236 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.057     ; 1.186      ;
-; -0.226 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.123     ; 1.110      ;
-; -0.226 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.123     ; 1.110      ;
-; -0.226 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.123     ; 1.110      ;
-; -0.226 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.123     ; 1.110      ;
-; -0.225 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.042     ; 1.190      ;
-; -0.225 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.042     ; 1.190      ;
-; -0.225 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.042     ; 1.190      ;
-; -0.225 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.042     ; 1.190      ;
-; -0.225 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.014     ; 1.218      ;
-; -0.225 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.014     ; 1.218      ;
+; -0.791 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.029     ; 1.769      ;
+; -0.791 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.029     ; 1.769      ;
+; -0.791 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.029     ; 1.769      ;
+; -0.748 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.029     ; 1.726      ;
+; -0.748 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.029     ; 1.726      ;
+; -0.748 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.029     ; 1.726      ;
+; -0.748 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.029     ; 1.726      ;
+; -0.748 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.029     ; 1.726      ;
+; -0.748 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.029     ; 1.726      ;
+; -0.737 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.720      ;
+; -0.737 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.720      ;
+; -0.737 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.720      ;
+; -0.684 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.656      ;
+; -0.684 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.656      ;
+; -0.684 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.656      ;
+; -0.652 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.624      ;
+; -0.652 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.624      ;
+; -0.652 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.624      ;
+; -0.637 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.620      ;
+; -0.637 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.620      ;
+; -0.637 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.620      ;
+; -0.636 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.608      ;
+; -0.636 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.608      ;
+; -0.636 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.608      ;
+; -0.561 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.592      ;
+; -0.561 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.592      ;
+; -0.561 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.592      ;
+; -0.561 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.592      ;
+; -0.560 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.532      ;
+; -0.560 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.532      ;
+; -0.560 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.035     ; 1.532      ;
+; -0.539 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.522      ;
+; -0.539 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.522      ;
+; -0.539 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.522      ;
+; -0.504 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.487      ;
+; -0.502 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 1.509      ;
+; -0.502 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 1.509      ;
+; -0.485 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.468      ;
+; -0.458 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.078     ; 1.387      ;
+; -0.440 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.423      ;
+; -0.427 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.410      ;
+; -0.411 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.078     ; 1.340      ;
+; -0.407 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.438      ;
+; -0.407 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.438      ;
+; -0.407 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.438      ;
+; -0.407 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.438      ;
+; -0.405 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.078     ; 1.334      ;
+; -0.398 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.078     ; 1.327      ;
+; -0.392 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 1.399      ;
+; -0.392 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 1.399      ;
+; -0.388 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.431      ;
+; -0.388 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.431      ;
+; -0.388 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.431      ;
+; -0.388 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.431      ;
+; -0.376 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.078     ; 1.305      ;
+; -0.373 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.078     ; 1.302      ;
+; -0.359 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.390      ;
+; -0.359 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.390      ;
+; -0.359 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.390      ;
+; -0.359 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.024      ; 1.390      ;
+; -0.340 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.383      ;
+; -0.340 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.383      ;
+; -0.340 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.383      ;
+; -0.340 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.383      ;
+; -0.335 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.365      ;
+; -0.335 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.365      ;
+; -0.335 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.365      ;
+; -0.335 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.365      ;
+; -0.335 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.378      ;
+; -0.335 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.378      ;
+; -0.335 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.378      ;
+; -0.335 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num4[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.036      ; 1.378      ;
+; -0.323 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.078     ; 1.252      ;
+; -0.311 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.294      ;
+; -0.308 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.037      ; 1.352      ;
+; -0.308 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.037      ; 1.352      ;
+; -0.308 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.037      ; 1.352      ;
+; -0.308 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.037      ; 1.352      ;
+; -0.300 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.078     ; 1.229      ;
+; -0.287 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.052     ; 1.242      ;
+; -0.287 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.052     ; 1.242      ;
+; -0.287 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.052     ; 1.242      ;
+; -0.282 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.078     ; 1.211      ;
+; -0.276 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.306      ;
+; -0.276 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.306      ;
+; -0.276 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.306      ;
+; -0.276 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.306      ;
+; -0.273 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.303      ;
+; -0.273 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.303      ;
+; -0.273 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.303      ;
+; -0.273 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.023      ; 1.303      ;
+; -0.272 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.024     ; 1.255      ;
+; -0.260 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 1.000        ; -0.078     ; 1.189      ;
+; -0.257 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 1.264      ;
+; -0.257 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 1.264      ;
+; -0.254 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.037      ; 1.298      ;
+; -0.254 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.037      ; 1.298      ;
+; -0.254 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.037      ; 1.298      ;
+; -0.254 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.037      ; 1.298      ;
+; -0.253 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 1.260      ;
 +--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -820,106 +820,106 @@ No paths to report.
 +-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; 0.201 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.022      ; 0.307      ;
+; 0.201 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.022      ; 0.307      ;
 ; 0.201 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.022      ; 0.307      ;
-; 0.201 ; Loteria:Loteria|p0[1]      ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.022      ; 0.307      ;
 ; 0.201 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.022      ; 0.307      ;
 ; 0.201 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.022      ; 0.307      ;
-; 0.201 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.022      ; 0.307      ;
+; 0.201 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.022      ; 0.307      ;
+; 0.201 ; Loteria:Loteria|p0[1]      ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.022      ; 0.307      ;
 ; 0.208 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.022      ; 0.314      ;
-; 0.359 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.017      ; 0.460      ;
-; 0.361 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.017      ; 0.462      ;
-; 0.380 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.058      ; 0.522      ;
-; 0.380 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.058      ; 0.522      ;
-; 0.409 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.517      ;
-; 0.409 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 0.518      ;
-; 0.438 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.143      ; 0.665      ;
-; 0.443 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 0.552      ;
-; 0.448 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 0.557      ;
-; 0.479 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.143      ; 0.706      ;
-; 0.481 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.017      ; 0.582      ;
-; 0.481 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.143      ; 0.708      ;
-; 0.497 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.605      ;
-; 0.509 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 0.618      ;
-; 0.511 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 0.620      ;
-; 0.514 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 0.630      ;
-; 0.514 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 0.623      ;
-; 0.515 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 0.631      ;
-; 0.516 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 0.632      ;
-; 0.516 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.017      ; 0.617      ;
-; 0.533 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.017      ; 0.634      ;
-; 0.553 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 0.669      ;
-; 0.556 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 0.665      ;
-; 0.605 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 0.721      ;
-; 0.613 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 0.729      ;
-; 0.617 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.024     ; 0.677      ;
-; 0.618 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.017      ; 0.719      ;
-; 0.619 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.727      ;
-; 0.633 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 0.831      ;
-; 0.636 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 0.834      ;
-; 0.637 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.002     ; 0.719      ;
-; 0.638 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.024     ; 0.698      ;
-; 0.648 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.014      ; 0.746      ;
-; 0.648 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.002     ; 0.730      ;
-; 0.649 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.014      ; 0.747      ;
-; 0.649 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.014      ; 0.747      ;
-; 0.652 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.143      ; 0.879      ;
-; 0.670 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.143      ; 0.897      ;
-; 0.682 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.790      ;
-; 0.686 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.794      ;
-; 0.690 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 0.799      ;
-; 0.695 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 0.893      ;
-; 0.724 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.024     ; 0.784      ;
-; 0.726 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.834      ;
-; 0.728 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.143      ; 0.955      ;
-; 0.729 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 0.927      ;
-; 0.734 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 0.932      ;
-; 0.776 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 0.933      ;
-; 0.777 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.025      ; 0.886      ;
-; 0.790 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.014      ; 0.888      ;
-; 0.791 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.014      ; 0.889      ;
-; 0.791 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.014      ; 0.889      ;
-; 0.806 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.024     ; 0.866      ;
-; 0.811 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.024     ; 0.871      ;
-; 0.837 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.024     ; 0.897      ;
-; 0.839 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 0.996      ;
-; 0.847 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.004      ;
-; 0.863 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 1.061      ;
-; 0.867 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.024     ; 0.927      ;
-; 0.881 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.038      ;
-; 0.911 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.034      ; 1.029      ;
-; 0.911 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.034      ; 1.029      ;
-; 0.911 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.034      ; 1.029      ;
-; 0.911 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.034      ; 1.029      ;
-; 0.918 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.024     ; 0.978      ;
-; 0.922 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.079      ;
-; 0.924 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.081      ;
-; 0.954 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 1.070      ;
-; 0.954 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 1.070      ;
-; 0.954 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 1.070      ;
-; 0.954 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 1.070      ;
-; 0.983 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.013      ; 1.080      ;
-; 0.983 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.013      ; 1.080      ;
-; 0.983 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.013      ; 1.080      ;
-; 0.983 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.013      ; 1.080      ;
-; 0.987 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.030      ; 1.101      ;
-; 0.987 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.030      ; 1.101      ;
-; 0.987 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.030      ; 1.101      ;
-; 0.987 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.030      ; 1.101      ;
-; 1.005 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.030      ; 1.119      ;
-; 1.005 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.030      ; 1.119      ;
-; 1.005 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.030      ; 1.119      ;
-; 1.005 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.030      ; 1.119      ;
-; 1.014 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.034     ; 1.064      ;
-; 1.014 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.034     ; 1.064      ;
-; 1.014 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.034     ; 1.064      ;
-; 1.014 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; -0.034     ; 1.064      ;
-; 1.019 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.058      ; 1.161      ;
-; 1.019 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.058      ; 1.161      ;
-; 1.023 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 1.139      ;
-; 1.023 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 1.139      ;
-; 1.023 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 1.139      ;
-; 1.023 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.032      ; 1.139      ;
+; 0.242 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.350      ;
+; 0.306 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 0.504      ;
+; 0.309 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 0.507      ;
+; 0.318 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.084      ; 0.486      ;
+; 0.318 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.084      ; 0.486      ;
+; 0.319 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.084      ; 0.487      ;
+; 0.348 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.456      ;
+; 0.371 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.084      ; 0.539      ;
+; 0.377 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.084      ; 0.545      ;
+; 0.382 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 0.580      ;
+; 0.415 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.084      ; 0.583      ;
+; 0.441 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 0.565      ;
+; 0.452 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 0.576      ;
+; 0.459 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.567      ;
+; 0.509 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 0.707      ;
+; 0.512 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.620      ;
+; 0.513 ; Loteria:Loteria|hits[0]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.621      ;
+; 0.526 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 0.650      ;
+; 0.543 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.651      ;
+; 0.553 ; Loteria:Loteria|hits[2]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.661      ;
+; 0.570 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.678      ;
+; 0.587 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 0.711      ;
+; 0.588 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.696      ;
+; 0.601 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.042      ; 0.727      ;
+; 0.603 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 0.727      ;
+; 0.611 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.042      ; 0.737      ;
+; 0.611 ; Loteria:Loteria|hits[1]    ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.719      ;
+; 0.647 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[1]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.755      ;
+; 0.653 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.078      ; 0.815      ;
+; 0.654 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.078      ; 0.816      ;
+; 0.655 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.078      ; 0.817      ;
+; 0.659 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.767      ;
+; 0.662 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.042      ; 0.788      ;
+; 0.667 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.775      ;
+; 0.693 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.801      ;
+; 0.694 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 0.818      ;
+; 0.708 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|p0[1]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.042      ; 0.834      ;
+; 0.720 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.828      ;
+; 0.775 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.883      ;
+; 0.792 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 0.911      ;
+; 0.798 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.906      ;
+; 0.801 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 0.958      ;
+; 0.801 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 0.958      ;
+; 0.801 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 0.958      ;
+; 0.801 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 0.958      ;
+; 0.812 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|lastTrue   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.920      ;
+; 0.828 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 0.947      ;
+; 0.829 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.153      ; 1.066      ;
+; 0.829 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.153      ; 1.066      ;
+; 0.829 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.153      ; 1.066      ;
+; 0.829 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.153      ; 1.066      ;
+; 0.837 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 0.945      ;
+; 0.846 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.003      ;
+; 0.846 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.003      ;
+; 0.846 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.003      ;
+; 0.846 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.003      ;
+; 0.855 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 0.974      ;
+; 0.879 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.138      ; 1.101      ;
+; 0.879 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.138      ; 1.101      ;
+; 0.879 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.138      ; 1.101      ;
+; 0.879 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|num2[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.138      ; 1.101      ;
+; 0.891 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.048      ;
+; 0.891 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.048      ;
+; 0.891 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.048      ;
+; 0.891 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.048      ;
+; 0.896 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 1.015      ;
+; 0.897 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[1] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.078      ; 1.059      ;
+; 0.897 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 1.005      ;
+; 0.898 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[2] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.078      ; 1.060      ;
+; 0.899 ; Loteria:Loteria|state[0]   ; Loteria:Loteria|auxHits[0] ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.078      ; 1.061      ;
+; 0.921 ; Loteria:Loteria|auxHits[1] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 1.040      ;
+; 0.923 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.139      ; 1.146      ;
+; 0.923 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.139      ; 1.146      ;
+; 0.923 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.139      ; 1.146      ;
+; 0.923 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num1[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.139      ; 1.146      ;
+; 0.937 ; Loteria:Loteria|auxHits[2] ; Loteria:Loteria|state[2]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 1.056      ;
+; 0.939 ; Loteria:Loteria|lastTrue   ; Loteria:Loteria|state[3]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.024      ; 1.047      ;
+; 0.942 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 1.066      ;
+; 0.942 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 1.066      ;
+; 0.942 ; Loteria:Loteria|state[2]   ; Loteria:Loteria|hits[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 1.066      ;
+; 0.947 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.104      ;
+; 0.947 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.104      ;
+; 0.947 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.104      ;
+; 0.947 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|num0[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.073      ; 1.104      ;
+; 0.988 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.153      ; 1.225      ;
+; 0.988 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.153      ; 1.225      ;
+; 0.988 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[2]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.153      ; 1.225      ;
+; 0.988 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|num3[3]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.153      ; 1.225      ;
+; 0.992 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|win        ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 1.190      ;
+; 0.992 ; Loteria:Loteria|state[1]   ; Loteria:Loteria|p0[0]      ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.114      ; 1.190      ;
+; 0.992 ; Loteria:Loteria|auxHits[0] ; Loteria:Loteria|state[0]   ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.035      ; 1.111      ;
+; 0.998 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[0]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 1.122      ;
+; 0.998 ; Loteria:Loteria|state[3]   ; Loteria:Loteria|hits[1]    ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.040      ; 1.122      ;
 +-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -934,10 +934,10 @@ No synchronizer chains to report.
 +------------------+---------+-------+----------+---------+---------------------+
 ; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+---------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -2.071  ; 0.201 ; N/A      ; N/A     ; -3.000              ;
-;  KEY[0]          ; -2.071  ; 0.201 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS  ; -63.308 ; 0.0   ; 0.0      ; 0.0     ; -46.69              ;
-;  KEY[0]          ; -63.308 ; 0.000 ; N/A      ; N/A     ; -46.690             ;
+; Worst-case Slack ; -2.750  ; 0.201 ; N/A      ; N/A     ; -3.000              ;
+;  KEY[0]          ; -2.750  ; 0.201 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -65.684 ; 0.0   ; 0.0      ; 0.0     ; -46.69              ;
+;  KEY[0]          ; -65.684 ; 0.000 ; N/A      ; N/A     ; -46.690             ;
 +------------------+---------+-------+----------+---------+---------------------+
 
 
@@ -3075,7 +3075,7 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; KEY[0]     ; KEY[0]   ; 220      ; 0        ; 0        ; 0        ;
+; KEY[0]     ; KEY[0]   ; 339      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -3085,7 +3085,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; KEY[0]     ; KEY[0]   ; 220      ; 0        ; 0        ; 0        ;
+; KEY[0]     ; KEY[0]   ; 339      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -3277,7 +3277,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Fri Dec  1 15:07:36 2023
+    Info: Processing started: Fri Dec  1 15:21:45 2023
 Info: Command: quartus_sta DE2_115 -c DE2_115
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -3294,10 +3294,10 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.071
+Info (332146): Worst-case setup slack is -2.750
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.071             -63.308 KEY[0] 
+    Info (332119):    -2.750             -65.684 KEY[0] 
 Info (332146): Worst-case hold slack is 0.440
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -3314,10 +3314,10 @@ Info (334004): Delay annotation completed successfully
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.818
+Info (332146): Worst-case setup slack is -2.402
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.818             -55.485 KEY[0] 
+    Info (332119):    -2.402             -57.619 KEY[0] 
 Info (332146): Worst-case hold slack is 0.387
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -3332,10 +3332,10 @@ Info: Analyzing Fast 1200mV 0C Model
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.490
+Info (332146): Worst-case setup slack is -0.791
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.490             -12.391 KEY[0] 
+    Info (332119):    -0.791             -13.026 KEY[0] 
 Info (332146): Worst-case hold slack is 0.201
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -3345,12 +3345,12 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -42.540 KEY[0] 
+    Info (332119):    -3.000             -42.128 KEY[0] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 665 megabytes
-    Info: Processing ended: Fri Dec  1 15:07:38 2023
+    Info: Peak virtual memory: 655 megabytes
+    Info: Processing ended: Fri Dec  1 15:21:47 2023
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 

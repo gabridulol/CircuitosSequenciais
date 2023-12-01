@@ -1,12 +1,12 @@
-Fitter Status : Successful - Fri Dec  1 15:07:33 2023
+Fitter Status : Successful - Fri Dec  1 15:21:42 2023
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : DE2_115
 Top-level Entity Name : DE2_115
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 110 / 114,480 ( < 1 % )
-    Total combinational functions : 100 / 114,480 ( < 1 % )
+Total logic elements : 119 / 114,480 ( < 1 % )
+    Total combinational functions : 119 / 114,480 ( < 1 % )
     Dedicated logic registers : 34 / 114,480 ( < 1 % )
 Total registers : 34
 Total pins : 525 / 529 ( 99 % )

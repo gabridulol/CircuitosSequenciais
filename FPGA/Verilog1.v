@@ -7,7 +7,7 @@ module Loteria (
     input wire reset, // Reset
 
     // Saídas
-    output reg [9:0] LEDR, // LEDR -> Estado
+    output reg [8:0] LEDR, // LEDR -> Estado
     output reg [6:0] HEX0, // Display 0 -> Número 4
     output reg [6:0] HEX1, // Display 1 -> Número 3
     output reg [6:0] HEX2, // Display 2 -> Número 2
@@ -32,11 +32,10 @@ parameter [3:0] s1 = 4'b0001; // Aguardando inserção do segundo número
 parameter [3:0] s2 = 4'b0010; // Aguardando inserção do terceiro número
 parameter [3:0] s3 = 4'b0011; // Aguardando inserção do quarto número
 parameter [3:0] s4 = 4'b0100; // Aguardando inserção do quinto número
-parameter [3:0] s5 = 4'b0101; // Aguardando finalização do jogo
-parameter [3:0] s6 = 4'b0110; // Verificando resultado do jogo
-parameter [3:0] s7 = 4'b0111; // Estado Prêmio 0
-parameter [3:0] s8 = 4'b1000; // Estado Prêmio 1
-parameter [3:0] s9 = 4'b1001; // Estado Prêmio 2
+parameter [3:0] s5 = 4'b0101; // Finalizando e verificando resultado do jogo
+parameter [3:0] s6 = 4'b0110; // Estado Prêmio 0
+parameter [3:0] s7 = 4'b0111; // Estado Prêmio 1
+parameter [3:0] s8 = 4'b1000; // Estado Prêmio 2
  
 // Variáveis
 reg [3:0] state; // Estado da FSM
@@ -52,7 +51,7 @@ reg win; // Venceu?
 reg [1:0] p0; // Prêmio
 
 reg [6:0] sdm [0:11]; // Mapa de Segmentos do Display
-reg [9:0] lrm [0:9]; // Mapa de LEDR
+reg [8:0] lrm [0:8]; // Mapa de LEDR
 
 initial begin
     state = s0;
@@ -81,16 +80,15 @@ initial begin
     sdm[10] = 7'b0111111; // -
     sdm[11] = 7'b0001100; // P
 
-    lrm[0] = 9'b000000000; // S0
-    lrm[1] = 9'b000000001; // S1
-    lrm[2] = 9'b000000011; // S2
-    lrm[3] = 9'b000000111; // S3
-    lrm[4] = 9'b000001111; // S4
-    lrm[5] = 9'b000011111; // S5
-    lrm[6] = 9'b000111111; // S6
-    lrm[7] = 9'b001111111; // S7
-    lrm[8] = 9'b011111111; // S8
-    lrm[9] = 9'b111111111; // S9
+    lrm[0] = 8'b00000000; // S0
+    lrm[1] = 8'b00000001; // S1
+    lrm[2] = 8'b00000011; // S2
+    lrm[3] = 8'b00000111; // S3
+    lrm[4] = 8'b00001111; // S4
+    lrm[5] = 8'b00011111; // S5
+    lrm[6] = 8'b00111111; // S6
+    lrm[7] = 8'b01111111; // S7
+    lrm[8] = 8'b11111111; // S8
 end
 
 always @(posedge clk) begin
@@ -130,9 +128,11 @@ always @(posedge clk) begin
                         if (num == b1) begin
                             hits = hits + 1;
                         end
-                        auxHits = hits;
                         else begin
                             hits = 0;
+                        end
+                        if(hits > 3'b000) begin
+                            auxHits = hits;
                         end
                         state = s2;
                     end
@@ -146,9 +146,11 @@ always @(posedge clk) begin
                         if (num == b2) begin
                             hits = hits + 1;
                         end
-                        auxHits = hits;
                         else begin
                             hits = 0;
+                        end
+                        if(hits > 3'b000) begin
+                            auxHits = hits;
                         end
                         state = s3;
                     end
@@ -162,9 +164,11 @@ always @(posedge clk) begin
                         if (num == b3) begin
                             hits = hits + 1;
                         end
-                        auxHits = hits;
                         else begin
                             hits = 0;
+                        end
+                        if(hits > 3'b000) begin
+                            auxHits = hits;
                         end
                         state = s4;
                     end
@@ -183,34 +187,30 @@ always @(posedge clk) begin
                 end
             end
             s5 : begin
-                // Aguardando finalização do jogo
                 if (finish) begin
-                    state = s6;
+                    // Verificando resultado do jogo
+                    if (auxHits == 3'b100 || (auxHits == 3'b011 && lastTrue == 1'b1)) begin
+                        state = s7; // Prêmio 1
+                    end
+                    else if (auxHits == 3'b010 && lastTrue == 1'b1) begin
+                        state = s8; // Prêmio 2
+                    end
+                    else begin
+                        state = s6; // Prêmio 0
+                    end
                 end
             end
             s6 : begin
-                // Verificando resultado do jogo
-                if (auxHits == 3'b100 || (auxHits == 3'b011 && lastTrue == 1'b1)) begin
-                    state = s8; // Prêmio 1
-                end
-                else if (auxHits == 3'b010 && lastTrue == 1'b1) begin
-                    state = s9; // Prêmio 2
-                end
-                else begin
-                    state = s7; // Prêmio 0
-                end
-            end
-            s7 : begin
                 // Prêmio 0
                 win = 0;
                 p0 = 2'b00;
             end
-            s8 : begin
+            s7 : begin
                 // Prêmio 1
                 win = 1;
                 p0 = 2'b01;
             end
-            s9 : begin
+            s8 : begin
                 // Prêmio 2
                 win = 1;
                 p0 = 2'b10;

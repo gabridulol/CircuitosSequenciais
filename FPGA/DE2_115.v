@@ -421,7 +421,7 @@ Loteria Loteria (
 	
 	.reset(SW[15]),
 	
-	.LEDR(LEDR[17:9]),
+	.LEDR(LEDR[17:10]),
 	
 	.HEX0(HEX0[6:0]),
 	

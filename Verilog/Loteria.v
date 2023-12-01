@@ -7,6 +7,9 @@ module Loteria (
     input wire reset, // Reset
 
     // Saídas
+    output reg [1:0] prm, // Prêmio
+
+    // Saídas FPGA
     output reg [8:0] LEDR, // LEDR -> Estado
     output reg [6:0] HEX0, // Display 0 -> Número 4
     output reg [6:0] HEX1, // Display 1 -> Número 3
@@ -230,7 +233,9 @@ always @(posedge clk) begin
 end
 
 // Atualizando
-always @(state, num0, num1, num2, num3, num4, p0) begin
+always @(state, num0, num1, num2, num3, num4, p0) begin    
+    prm = p0; // Prêmio
+
     LEDR = lrm[state]; // Estado
     HEX0 = sdm[num4]; // Número 4
     HEX1 = sdm[num3]; // Número 3

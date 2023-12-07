@@ -1,5 +1,5 @@
 Fitter report for DE2_115
-Fri Dec  1 20:39:15 2023
+Thu Dec  7 20:51:48 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Dec  1 20:39:15 2023          ;
+; Fitter Status                      ; Successful - Thu Dec  7 20:51:48 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; DE2_115                                        ;
 ; Top-level Entity Name              ; DE2_115                                        ;
@@ -3986,7 +3986,7 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169177): 168 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at Y2 File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/DE2_115.v Line: 214
     Info (169178): Pin CLOCK2_50 uses I/O standard 3.3-V LVTTL at AG14 File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/DE2_115.v Line: 215
@@ -4372,10 +4372,10 @@ Warning (169064): Following 213 pins have no output enable or a GND or VCC outpu
     Info (169065): Pin HSMC_TX_D_P[16] has a permanently disabled output enable File: /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/DE2_115.v Line: 406
 Info (144001): Generated suppressed messages file /home/gabriel/Documentos/myWorkspace/UFV - Ciência da Computação/CCF 251 - Introdução Aos Sistemas Lógicos Digitais/Trabalho Prático 02 - Circuitos Sequenciais/FPGA/DE2_115.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1997 megabytes
-    Info: Processing ended: Fri Dec  1 20:39:15 2023
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Peak virtual memory: 1970 megabytes
+    Info: Processing ended: Thu Dec  7 20:51:49 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:18
 
 
 +----------------------------+
